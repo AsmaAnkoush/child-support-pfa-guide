@@ -9,6 +9,7 @@
 .pg-hero {
   padding: 40px 0 6px;
   text-align: center;
+  overflow: visible;
 }
 
 .pg-eyebrow {
@@ -30,9 +31,12 @@
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.55;
   text-align: center;
   margin: 0 0 20px;
+  padding: 0.2rem 0 0.3rem;
+  display: block;
+  overflow: visible;
   background: linear-gradient(135deg, #E94B7C 0%, #C43869 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
