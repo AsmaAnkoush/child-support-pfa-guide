@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/pages.css" />
   <link rel="stylesheet" href="css/principles.css" />
+  
 </head>
 <body>
   <a href="#principles-main" class="skip-to-content">الانتقال للمحتوى الرئيسي</a>
@@ -21,19 +22,21 @@
   <!-- ── Navbar ── -->
   <header class="navbar">
     <div class="navbar-container">
-      <a href="index.html#/" class="navbar-logo" aria-label="الصفحة الرئيسية - مدرسة البلد" data-route-link="home">
-        <img src="images/logo.png" alt="شعار مدرسة البلد" />
-      </a>
+      <div class="navbar-logo">
+        <a href="index.html" aria-label="الصفحة الرئيسية">
+          <img src="images/logo.png" alt="شعار مدرسة البلد" />
+        </a>
+      </div>
       <nav class="navbar-menu">
         <ul>
-          <li><a href="index.html#/">الرئيسية</a></li>
+          <li><a href="index.html">الرئيسية</a></li>
           <li><a href="#">عن الدليل</a></li>
           <li><a href="principles.html" class="active">المبادئ</a></li>
           <li><a href="#">إدارة المجموعة</a></li>
           <li><a href="#">المشاعر</a></li>
           <li><a href="#">نهج PFA</a></li>
           <li><a href="#">اللقاءات</a></li>
-          <li><a href="index.html#/conclusion">الخاتمة</a></li>
+          <li><a href="#">الخاتمة</a></li>
         </ul>
       </nav>
       <div class="navbar-actions">
@@ -57,6 +60,12 @@
 
       <!-- ── Page Hero ── -->
       <section class="pg-hero">
+        <span class="pg-eyebrow" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.5C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          القسم الأول
+        </span>
         <h1 class="pg-title">المبادئ العامة</h1>
       </section>
 
@@ -86,13 +95,17 @@
             <article class="ptl-card">
               <div class="ptl-wm" aria-hidden="true">I</div>
               <header class="ptl-card-hdr">
+                <div class="ptl-badge-wrap">
+                  <span class="ptl-badge">أولاً</span>
+                  <span class="ptl-badge-num">01</span>
+                </div>
                 <div class="ptl-icon" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.5C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </div>
-                <h2 class="ptl-title">أولاً: لنؤمن بيئة آمنة</h2>
               </header>
+              <h2 class="ptl-title">أولاً: لنؤمن بيئة آمنة</h2>
               <ul class="ptl-points" role="list">
                 <li class="ptl-point">
                   <span class="ptl-marker" aria-hidden="true">
@@ -125,13 +138,17 @@
             <article class="ptl-card">
               <div class="ptl-wm" aria-hidden="true">II</div>
               <header class="ptl-card-hdr">
+                <div class="ptl-badge-wrap">
+                  <span class="ptl-badge">ثانياً</span>
+                  <span class="ptl-badge-num">02</span>
+                </div>
                 <div class="ptl-icon" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </div>
-                <h2 class="ptl-title">ثانياً: لنبن الثقة والعلاقة والتواصل الآمن</h2>
               </header>
+              <h2 class="ptl-title">ثانياً: لنبن الثقة والعلاقة والتواصل الآمن</h2>
               <ul class="ptl-points" role="list">
                 <li class="ptl-point">
                   <span class="ptl-marker" aria-hidden="true">
@@ -164,14 +181,18 @@
             <article class="ptl-card">
               <div class="ptl-wm" aria-hidden="true">III</div>
               <header class="ptl-card-hdr">
+                <div class="ptl-badge-wrap">
+                  <span class="ptl-badge">ثالثاً</span>
+                  <span class="ptl-badge-num">03</span>
+                </div>
                 <div class="ptl-icon" aria-hidden="true">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
                     <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </div>
-                <h2 class="ptl-title">ثالثاً: لندعم التعبير العاطفي</h2>
               </header>
+              <h2 class="ptl-title">ثالثاً: لندعم التعبير العاطفي</h2>
               <ul class="ptl-points" role="list">
                 <li class="ptl-point">
                   <span class="ptl-marker" aria-hidden="true">
@@ -215,7 +236,7 @@
   <!-- ── Mobile Drawer ── -->
   <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="القائمة الرئيسية">
     <div class="mobile-drawer-header">
-      <a href="index.html#/" class="navbar-logo" aria-label="العودة للصفحة الرئيسية">
+      <a href="index.html">
         <img src="images/logo.png" alt="شعار مدرسة البلد" style="height: 44px; width: auto;" />
       </a>
       <button class="mobile-drawer-close" id="drawer-close" aria-label="إغلاق القائمة">
@@ -226,14 +247,14 @@
     </div>
     <nav class="mobile-drawer-nav">
       <ul>
-        <li><a href="index.html#/">الرئيسية</a></li>
+        <li><a href="index.html">الرئيسية</a></li>
         <li><a href="#">عن الدليل</a></li>
         <li><a href="principles.html" class="active">المبادئ</a></li>
         <li><a href="#">إدارة المجموعة</a></li>
         <li><a href="#">المشاعر</a></li>
         <li><a href="#">نهج PFA</a></li>
         <li><a href="#">اللقاءات</a></li>
-        <li><a href="index.html#/conclusion">الخاتمة</a></li>
+        <li><a href="#">الخاتمة</a></li>
       </ul>
     </nav>
   </div>
