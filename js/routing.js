@@ -27,8 +27,9 @@
 
   /* ── Nav href → routes it makes "active" ────────── */
   var NAV_ACTIVE = {
-    '#/':               ['/', '/about', ''],
-    '#/conclusion':     ['/conclusion'],
+    '#/':                  ['/', ''],
+    '#/#about-section':    ['/about', '/#about-section'],
+    '#/#conclusion-home':  ['/conclusion', '/#conclusion-home'],
     '#/principles':     ['/principles'],
     '#/group-management': ['/group-management', '/group-procedures',
                            '/group-interaction', '/difficult-behaviors'],
@@ -237,13 +238,13 @@
     var route = getRoute();
 
     /* About → scroll to guide-about section on home */
-    if (route === '/about') {
-      showHome('.guide-about-section');
+    if (route === '/about' || route === '/#about-section') {
+      showHome('#about-section');
       return;
     }
 
     /* Conclusion → scroll to خاتمة section on home */
-    if (route === '/conclusion') {
+    if (route === '/conclusion' || route === '/#conclusion-home') {
       showHome('#conclusion-home');
       return;
     }

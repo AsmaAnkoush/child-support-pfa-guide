@@ -31,13 +31,13 @@
       <nav class="navbar-menu">
         <ul>
           <li><a href="#/" class="active">الرئيسية</a></li>
-          <li><a href="#/about">عن الدليل</a></li>
+          <li><a href="#/#about-section">عن الدليل</a></li>
           <li><a href="#/principles">المبادئ</a></li>
           <li><a href="#/group-management">إدارة المجموعة</a></li>
           <li><a href="#/emotions">المشاعر</a></li>
           <li><a href="#/pfa-approach">نهج PFA</a></li>
           <li><a href="#/sessions">اللقاءات</a></li>
-          <li><a href="#/conclusion">الخاتمة</a></li>
+          <li><a href="#/#conclusion-home">الخاتمة</a></li>
         </ul>
       </nav>
 
@@ -172,7 +172,7 @@
   </section>
 
   <!-- ── عن الدليل (About the Guide - detailed) ── -->
-  <section class="guide-about-section">
+  <section class="guide-about-section" id="about-section">
     <div class="container">
       <div class="block-card block-card--guide">
 
@@ -342,13 +342,13 @@
     <nav class="mobile-drawer-nav">
       <ul>
         <li><a href="#/" class="active">الرئيسية</a></li>
-        <li><a href="#/about">عن الدليل</a></li>
+        <li><a href="#/#about-section">عن الدليل</a></li>
         <li><a href="#/principles">المبادئ</a></li>
         <li><a href="#/group-management">إدارة المجموعة</a></li>
         <li><a href="#/emotions">المشاعر</a></li>
         <li><a href="#/pfa-approach">نهج PFA</a></li>
         <li><a href="#/sessions">اللقاءات</a></li>
-        <li><a href="#/conclusion">الخاتمة</a></li>
+        <li><a href="#/#conclusion-home">الخاتمة</a></li>
       </ul>
     </nav>
   </div>
@@ -560,6 +560,48 @@
       var hint = document.querySelector('.hero-scroll-hint');
       if (btn)  btn.addEventListener('click', scrollToNext);
       if (hint) hint.addEventListener('click', scrollToNext);
+    })();
+
+    /* ── Section-scroll links: الخاتمة + عن الدليل ── */
+    (function () {
+      function scrollToSection(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var navbar = document.querySelector('.navbar');
+        var off    = navbar ? navbar.offsetHeight : 0;
+        var top    = el.getBoundingClientRect().top + window.pageYOffset - off - 12;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+
+      function isHomePage() {
+        var pv = document.getElementById('page-view');
+        return !pv || pv.style.display === 'none';
+      }
+
+      /* Conclusion links — #/#conclusion-home */
+      document.querySelectorAll('a[href="#/#conclusion-home"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (isHomePage()) {
+            scrollToSection('conclusion-home');
+          } else {
+            /* On a content page → let router navigate home, then scroll */
+            window.location.hash = '#/conclusion';
+          }
+        });
+      });
+
+      /* About links — #/#about-section */
+      document.querySelectorAll('a[href="#/#about-section"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (isHomePage()) {
+            scrollToSection('about-section');
+          } else {
+            window.location.hash = '#/about';
+          }
+        });
+      });
     })();
   </script>
 
