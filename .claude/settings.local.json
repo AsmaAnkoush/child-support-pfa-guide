@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Copy-Item *)",
+      "Bash(powershell *)",
+      "Bash(python3 *)",
+      "Bash(Get-ChildItem D:\\\\Facilitators\\\\sessions.html, D:\\\\Facilitators\\\\session-1.html)",
+      "Bash(Select-Object Name, Length, LastWriteTime)",
+      "PowerShell(Select-String -Path \"C:\\\\Users\\\\user\\\\.claude\\\\projects\\\\D--Facilitators\\\\70a19df1-7b16-45cd-8c8e-340213b6d9c8.jsonl\" -Pattern \"لنصفق\" | Select-Object -First 3 | ForEach-Object { $_.LineNumber })",
+      "Bash(Get-ChildItem \"c:\\\\Users\\\\user\\\\Downloads\" -Filter \"*.png\")",
+      "Bash(Sort-Object LastWriteTime -Descending)",
+      "Bash(Select-Object -First 10)",
+      "Bash(Select Name, LastWriteTime)",
+      "PowerShell(python -c \"print\\('python ok'\\)\")",
+      "Bash(/c/Users/user/AppData/Local/Programs/Python/Python313/python *)",
+      "Bash(python *)",
+      "Bash(grep -r '[0-9]\\\\+-[0-9]\\\\+' \"D:\\\\\\\\Facilitators\" --include=\"*.html\" -n)",
+      "Bash(grep -roh '[0-9]\\\\+-[0-9]\\\\+' \"D:\\\\\\\\Facilitators\" --include=\"*.html\")",
+      "Bash(grep -rn \"\\\\\\(6-8\\\\|9-12\\\\|11-15\\\\|13-15\\\\|12-15\\\\\\)\" \"D:\\\\\\\\Facilitators\" --include=\"*.html\")",
+      "Bash(grep -rn \"[0-9]\\\\+-[0-9]\\\\+\" \"D:\\\\\\\\Facilitators\" --include=\"*.html\")"
+    ]
+  }
+}

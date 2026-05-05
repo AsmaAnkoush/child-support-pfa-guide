@@ -1,0 +1,196 @@
+/* ═══════════════════════════════════════════════════
+   session-6.css — Final session celebratory styles
+   ═══════════════════════════════════════════════════ */
+
+/* ── Activity 4 — Purple theme ── */
+.s1-activity--4 {
+  border-color: rgba(124, 58, 237, 0.14);
+  border-right-color: #7c3aed;
+}
+.s1-activity--4 .s1-act-num       { background: #7c3aed; }
+.s1-activity--4 .s1-act-label     { color: #7c3aed; }
+.s1-activity--4 .s1-section-label { color: #7c3aed; }
+
+.s1-activity--4 .s1-duration-badge {
+  background: rgba(124, 58, 237, 0.09);
+  color: #7c3aed;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+.s1-activity--4 .s1-step-num {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+}
+.s1-activity--4 .s1-substep-dot {
+  background: #7c3aed;
+  opacity: 0.6;
+}
+
+/* ── Celebratory hero badge ── */
+.s6-final-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(217, 119, 6, 0.08));
+  border: 1px solid rgba(124, 58, 237, 0.28);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #7c3aed;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+/* ── Un-numbered step at end of activity (التقدير) ── */
+.s6-step-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+}
+.s6-step-note-bullet {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.s1-activity--3 .s6-step-note-bullet {
+  background: rgba(77, 189, 181, 0.1);
+  color: var(--color-teal);
+}
+
+/* ── Congratulations closing section ── */
+.s6-congrats {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(124, 58, 237, 0.18);
+  border-right: 4px solid #7c3aed;
+  padding: 36px 28px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+.s6-congrats.s1-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+.s6-congrats::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.05) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 80%, rgba(217, 119, 6, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(233, 75, 124, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Decorative sparkle dots */
+.s6-sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.s6-spark {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.28;
+}
+.s6-spark:nth-child(1) { width: 7px;  height: 7px;  top: 14%; left: 7%;   background: #f59e0b; }
+.s6-spark:nth-child(2) { width: 5px;  height: 5px;  top: 22%; right: 10%; background: #7c3aed; }
+.s6-spark:nth-child(3) { width: 9px;  height: 9px;  top: 68%; left: 5%;   background: var(--color-pink); }
+.s6-spark:nth-child(4) { width: 6px;  height: 6px;  top: 62%; right: 7%;  background: var(--color-primary-green); }
+.s6-spark:nth-child(5) { width: 4px;  height: 4px;  top: 82%; left: 22%;  background: #f59e0b; }
+.s6-spark:nth-child(6) { width: 8px;  height: 8px;  top: 38%; right: 4%;  background: var(--color-teal); }
+.s6-spark:nth-child(7) { width: 5px;  height: 5px;  top: 48%; left: 12%;  background: #7c3aed; }
+.s6-spark:nth-child(8) { width: 4px;  height: 4px;  top: 18%; left: 32%;  background: var(--color-primary-green); }
+.s6-spark:nth-child(9) { width: 6px;  height: 6px;  top: 78%; right: 22%; background: var(--color-pink); }
+.s6-spark:nth-child(10){ width: 5px;  height: 5px;  top: 55%; right: 28%; background: #f59e0b; }
+
+.s6-congrats-inner {
+  position: relative;
+  z-index: 1;
+}
+.s6-congrats-emoji {
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 16px;
+  display: block;
+}
+.s6-congrats-title {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-weight: 900;
+  color: var(--color-text-dark);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+.s6-congrats-text {
+  font-size: var(--font-secondary);
+  line-height: var(--lh-body-ar);
+  color: var(--color-text-medium);
+  max-width: 520px;
+  margin: 0 auto 22px;
+}
+.s6-sessions-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: var(--radius-full);
+  padding: 7px 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #7c3aed;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .s6-congrats { padding: 26px 20px; }
+}
+@media (max-width: 479px) {
+  .s6-congrats { padding: 20px 14px; }
+  .s6-congrats-emoji { font-size: 2.2rem; }
+}
+
+/* ── Children's message section ── */
+.s6-child-msg {
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 2px dashed rgba(124, 58, 237, 0.18);
+}
+
+.s6-child-msg-hdr {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.s6-child-msg-deco {
+  display: block;
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+}
+
+.s6-child-msg-title {
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 900;
+  color: var(--color-text-dark);
+  margin: 0 0 12px;
+  line-height: var(--lh-heading);
+}
+
+.s6-child-msg-bar {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  border-radius: 2px;
+  margin: 0 auto;
+}

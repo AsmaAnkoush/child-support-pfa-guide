@@ -1,0 +1,162 @@
+/* ══════════════════════════════════════
+   difficult-behaviors.css — Page-specific styles
+   ══════════════════════════════════════ */
+
+/* ════════════════════════════════════
+   Strategies Section
+   ════════════════════════════════════ */
+.db-section {
+  padding: 12px 0 64px;
+}
+
+.db-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+
+/* ── Strategy Card ── */
+.db-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(91, 168, 90, 0.14);
+  border-right: 3px solid var(--color-primary-green);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.34, 1.1, 0.64, 1),
+    box-shadow 0.25s ease;
+}
+
+.db-card.db-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.db-card.db-vis:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+
+/* ── Number badge ── */
+.db-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: rgba(91, 168, 90, 0.1);
+  border: 1px solid rgba(91, 168, 90, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: var(--color-primary-green);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+
+/* ── Text ── */
+.db-text {
+  flex: 1;
+  font-size: var(--font-secondary);
+  line-height: var(--lh-body-ar);
+  color: var(--color-text-medium);
+  margin: 0;
+}
+
+/* Inline quoted example phrases */
+.db-quote {
+  color: var(--color-text-dark);
+  font-weight: 600;
+  background: rgba(91, 168, 90, 0.07);
+  border-radius: 4px;
+  padding: 1px 6px;
+  border: 1px solid rgba(91, 168, 90, 0.15);
+}
+
+
+/* ════════════════════════════════════
+   Warning Card (last strategy)
+   ════════════════════════════════════ */
+.db-card--warning {
+  border-color: rgba(214, 56, 40, 0.2);
+  border-right: 4px solid #D63828;
+  background: rgba(214, 56, 40, 0.03);
+}
+
+.db-card--warning:hover {
+  box-shadow: 0 4px 16px rgba(214, 56, 40, 0.12);
+}
+
+.db-card--warning .db-num {
+  background: rgba(214, 56, 40, 0.1);
+  border-color: rgba(214, 56, 40, 0.22);
+  color: #D63828;
+}
+
+.db-card--warning .db-text {
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+.db-warning-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.db-warning-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #D63828;
+  background: rgba(214, 56, 40, 0.09);
+  border: 1px solid rgba(214, 56, 40, 0.25);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  letter-spacing: 0.04em;
+  align-self: flex-start;
+}
+
+
+/* ════════════════════════════════════
+   Responsive
+   ════════════════════════════════════ */
+
+@media (max-width: 767px) {
+  .db-section { padding-bottom: 40px; }
+
+  .db-card {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 479px) {
+  .db-section { padding-bottom: 28px; }
+
+  .db-card {
+    padding: 14px 14px;
+    gap: 10px;
+  }
+
+  .db-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,210 @@
+/* ══════════════════════════════════════
+   group-interaction.css — Page-specific styles
+   ══════════════════════════════════════ */
+
+/* ════════════════════════════════════
+   Main Section
+   ════════════════════════════════════ */
+.gi-section {
+  padding: 12px 0 64px;
+}
+
+
+/* ════════════════════════════════════
+   Observation Alerts
+   ════════════════════════════════════ */
+.gi-obs-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #B87A0C;
+  background: rgba(218, 155, 18, 0.1);
+  border: 1px solid rgba(218, 155, 18, 0.25);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+  margin-bottom: 16px;
+}
+
+.gi-observations {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.gi-obs-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(232, 162, 24, 0.05);
+  border: 1.5px solid rgba(232, 162, 24, 0.22);
+  border-right: 4px solid #E8A218;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(232, 162, 24, 0.08);
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+
+.gi-obs-card.gi-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gi-obs-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(232, 162, 24, 0.12);
+  border: 1px solid rgba(232, 162, 24, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C88A10;
+  margin-top: 1px;
+}
+
+.gi-obs-text {
+  flex: 1;
+  font-size: var(--font-secondary);
+  line-height: var(--lh-body-ar);
+  color: var(--color-text-medium);
+  margin: 0;
+}
+
+
+/* ════════════════════════════════════
+   Sub-heading
+   ════════════════════════════════════ */
+.gi-subhdr {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(1.05rem, 2vw, 1.18rem);
+  font-weight: 800;
+  color: var(--color-text-dark);
+  margin: 0 0 20px;
+}
+
+.gi-subhdr::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 22px;
+  background: var(--color-primary-green);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+
+/* ════════════════════════════════════
+   Actions Grid
+   ════════════════════════════════════ */
+.gi-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.gi-action-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(91, 168, 90, 0.15);
+  border-right: 3px solid var(--color-primary-green);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.34, 1.1, 0.64, 1),
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.gi-action-card.gi-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gi-action-card.gi-vis:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.gi-action-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(91, 168, 90, 0.1);
+  border: 1px solid rgba(91, 168, 90, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--color-primary-green);
+  margin-top: 1px;
+}
+
+.gi-action-text {
+  flex: 1;
+  font-size: var(--font-secondary);
+  line-height: var(--lh-body-ar);
+  color: var(--color-text-medium);
+  margin: 0;
+}
+
+/* Inline quoted phrases */
+.gi-quote {
+  color: var(--color-text-dark);
+  font-weight: 600;
+  background: rgba(91, 168, 90, 0.08);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+
+/* ════════════════════════════════════
+   Responsive
+   ════════════════════════════════════ */
+
+@media (max-width: 767px) {
+  .gi-section { padding-bottom: 40px; }
+
+  .gi-observations { margin-bottom: 24px; }
+
+  .gi-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 479px) {
+  .gi-section { padding-bottom: 28px; }
+
+  .gi-observations { margin-bottom: 18px; }
+
+  .gi-obs-card {
+    padding: 14px 16px;
+  }
+
+  .gi-obs-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .gi-action-card {
+    padding: 14px 16px;
+  }
+}

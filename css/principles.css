@@ -1,0 +1,554 @@
+/* ══════════════════════════════════════
+   principles.css — Page-specific styles
+   ══════════════════════════════════════ */
+
+/* ── Page Nav Bar (pnb) ── */
+.pnb {
+  position: sticky;
+  top: 68px;
+  z-index: 100;
+  background: rgba(255, 249, 245, 0.94);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-bottom: 1px solid var(--color-border);
+  height: 48px;
+}
+
+.pnb .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 16px;
+}
+
+.pnb-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-text-medium);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pnb-back:hover {
+  color: var(--color-primary-green);
+  background: rgba(91, 168, 90, 0.07);
+}
+
+/* Flip arrow to point right — "back" direction in RTL */
+.pnb-back svg {
+  flex-shrink: 0;
+  transform: scaleX(-1);
+}
+
+.pnb-crumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.82rem;
+}
+
+.pnb-crumb {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a.pnb-crumb:hover {
+  color: var(--color-primary-green);
+}
+
+.pnb-crumb--current {
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
+.pnb-sep {
+  color: var(--color-text-light);
+  opacity: 0.45;
+  flex-shrink: 0;
+  /* Flip separator chevron for RTL reading direction */
+  transform: scaleX(-1);
+}
+
+
+/* ════════════════════════════════════
+   Page Hero
+   ════════════════════════════════════ */
+.pg-hero {
+  padding: 40px 0 6px;
+  text-align: right;
+}
+
+.pg-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-eyebrow);
+  font-weight: 700;
+  color: var(--color-primary-green);
+  background: rgba(91, 168, 90, 0.09);
+  border: 1px solid rgba(91, 168, 90, 0.2);
+  border-radius: var(--radius-full);
+  padding: 4px 12px 4px 10px;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+
+
+/* ════════════════════════════════════
+   Intro Card
+   ════════════════════════════════════ */
+.pg-intro {
+  padding: 20px 0 4px;
+}
+
+.pg-intro-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(91, 168, 90, 0.15);
+  border-right: 4px solid var(--color-primary-green);
+  padding: 22px 26px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* Large decorative opening quote */
+.pg-intro-card::before {
+  content: '"';
+  position: absolute;
+  left: 18px;
+  bottom: -16px;
+  font-size: 7rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-primary-green);
+  opacity: 0.045;
+  pointer-events: none;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.pg-intro-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(91, 168, 90, 0.09);
+  border: 1px solid rgba(91, 168, 90, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-green);
+  margin-top: 2px;
+}
+
+.pg-intro-text {
+  flex: 1;
+  font-size: var(--font-body);
+  line-height: var(--lh-body-ar);
+  color: var(--color-text-medium);
+  margin: 0;
+}
+
+
+/* ════════════════════════════════════
+   Principles Timeline
+   ════════════════════════════════════ */
+.principles-section {
+  padding: 16px 0 64px;
+}
+
+.ptl {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ── Block ── */
+.ptl-block {
+  display: flex;
+  align-items: stretch;
+  /* Reveal: start hidden */
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+
+.ptl-block.ptl-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ── Spine (right side in RTL — first flex child) ── */
+.ptl-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 44px;
+  flex-shrink: 0;
+  padding-top: 30px;
+}
+
+.ptl-node {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  background: var(--color-bg);
+  flex-shrink: 0;
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--color-bg);
+  transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.ptl-block.ptl-visible .ptl-node {
+  transform: scale(1.2);
+}
+
+.ptl-connector {
+  flex: 1;
+  width: 2px;
+  min-height: 28px;
+  margin-top: 5px;
+  background: linear-gradient(to bottom, currentColor, transparent);
+  opacity: 0.18;
+}
+
+/* No connector below the last block */
+.ptl-block:last-child .ptl-connector {
+  display: none;
+}
+
+/* Color spine elements via CSS currentColor inheritance */
+.ptl-block--green .ptl-spine { color: var(--color-primary-green); }
+.ptl-block--pink  .ptl-spine { color: var(--color-pink); }
+.ptl-block--teal  .ptl-spine { color: var(--color-teal); }
+
+
+/* ── Card ── */
+.ptl-card {
+  position: relative;
+  flex: 1;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid transparent;
+  padding: 28px 30px 24px;
+  margin-right: 14px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ptl-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Colored right-border accent + overall border per theme */
+.ptl-block--green .ptl-card {
+  border-color: rgba(91, 168, 90, 0.14);
+  border-right: 4px solid var(--color-primary-green);
+}
+.ptl-block--pink .ptl-card {
+  border-color: rgba(233, 75, 124, 0.13);
+  border-right: 4px solid var(--color-pink);
+}
+.ptl-block--teal .ptl-card {
+  border-color: rgba(77, 189, 181, 0.14);
+  border-right: 4px solid var(--color-teal);
+}
+
+
+/* ── Watermark (faded roman numeral) ── */
+.ptl-wm {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 5.5rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.ptl-block--green .ptl-wm { color: var(--color-primary-green); opacity: 0.05; }
+.ptl-block--pink  .ptl-wm { color: var(--color-pink);          opacity: 0.05; }
+.ptl-block--teal  .ptl-wm { color: var(--color-teal);          opacity: 0.05; }
+
+
+/* ── Card Header ── */
+.ptl-card-hdr {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.ptl-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ptl-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 13px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.ptl-badge-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  font-size: 0.73rem;
+  font-weight: 900;
+}
+
+.ptl-block--green .ptl-badge     { color: var(--color-primary-green); background: rgba(91, 168, 90, 0.1); }
+.ptl-block--green .ptl-badge-num { color: var(--color-primary-green); background: rgba(91, 168, 90, 0.13); }
+
+.ptl-block--pink  .ptl-badge     { color: var(--color-pink);          background: rgba(233, 75, 124, 0.08); }
+.ptl-block--pink  .ptl-badge-num { color: var(--color-pink);          background: rgba(233, 75, 124, 0.1); }
+
+.ptl-block--teal  .ptl-badge     { color: var(--color-teal);          background: rgba(77, 189, 181, 0.1); }
+.ptl-block--teal  .ptl-badge-num { color: var(--color-teal);          background: rgba(77, 189, 181, 0.13); }
+
+
+/* ── Icon ── */
+.ptl-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ptl-block--green .ptl-icon { background: rgba(91, 168, 90, 0.1);  color: var(--color-primary-green); border: 1px solid rgba(91, 168, 90, 0.18); }
+.ptl-block--pink  .ptl-icon { background: rgba(233, 75, 124, 0.08); color: var(--color-pink);          border: 1px solid rgba(233, 75, 124, 0.15); }
+.ptl-block--teal  .ptl-icon { background: rgba(77, 189, 181, 0.1);  color: var(--color-teal);          border: 1px solid rgba(77, 189, 181, 0.18); }
+
+
+/* ── Title ── */
+.ptl-title {
+  font-size: clamp(1.05rem, 2.2vw, 1.22rem);
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: var(--lh-subheading);
+  margin: 0;
+  flex: 1;
+}
+
+
+/* ── Bullet Points ── */
+.ptl-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ptl-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  /* Start hidden for stagger reveal */
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+
+.ptl-point.ptl-point-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ptl-marker {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.ptl-block--green .ptl-marker { background: rgba(91, 168, 90, 0.12);  color: var(--color-primary-green); }
+.ptl-block--pink  .ptl-marker { background: rgba(233, 75, 124, 0.1);  color: var(--color-pink); }
+.ptl-block--teal  .ptl-marker { background: rgba(77, 189, 181, 0.11); color: var(--color-teal); }
+
+.ptl-point-text {
+  flex: 1;
+  font-size: var(--font-secondary);
+  line-height: var(--lh-body-ar);
+  color: var(--color-text-medium);
+}
+
+
+/* ════════════════════════════════════
+   Responsive
+   ════════════════════════════════════ */
+
+/* Tablet (768–1023px) */
+@media (max-width: 1023px) {
+  .pg-hero {
+    padding: 32px 0 6px;
+  }
+
+  .ptl-card {
+    padding: 24px 22px 20px;
+    margin-right: 10px;
+  }
+
+  .ptl-wm {
+    font-size: 4.5rem;
+  }
+}
+
+/* Mobile large (480–767px) */
+@media (max-width: 767px) {
+  .principles-section { padding-bottom: 40px; }
+
+  .pnb-back { min-height: 44px; padding: 10px; }
+
+  .pg-hero {
+    padding: 24px 0 6px;
+  }
+
+  .pg-intro-card {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+
+  .pg-intro-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ptl-spine {
+    width: 34px;
+    padding-top: 24px;
+  }
+
+  .ptl-node {
+    width: 14px;
+    height: 14px;
+  }
+
+  .ptl-card {
+    padding: 20px 18px 18px;
+    margin-right: 8px;
+    margin-bottom: 18px;
+    border-radius: var(--radius-md);
+  }
+
+  .ptl-wm {
+    font-size: 4rem;
+  }
+
+  .ptl-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Mobile small (320–479px) */
+@media (max-width: 479px) {
+  .principles-section { padding-bottom: 28px; }
+
+  /* Hide breadcrumbs — too tight */
+  .pnb-crumbs {
+    display: none;
+  }
+
+  .pg-hero {
+    padding: 20px 0 4px;
+  }
+
+  .pg-intro-card {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .pg-intro-card::before {
+    display: none;
+  }
+
+  .ptl-spine {
+    width: 28px;
+    padding-top: 20px;
+  }
+
+  .ptl-node {
+    width: 12px;
+    height: 12px;
+    border-width: 2.5px;
+  }
+
+  .ptl-connector {
+    width: 2px;
+  }
+
+  .ptl-card {
+    padding: 16px 14px;
+    margin-right: 6px;
+    margin-bottom: 14px;
+  }
+
+  .ptl-card-hdr {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .ptl-wm {
+    font-size: 3rem;
+  }
+
+  .ptl-badge-wrap {
+    gap: 6px;
+  }
+
+  .ptl-title {
+    margin-bottom: 0;
+  }
+
+  .ptl-points {
+    gap: 8px;
+  }
+}

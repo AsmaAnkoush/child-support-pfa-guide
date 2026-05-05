@@ -1,0 +1,275 @@
+/* ══════════════════════════════════════
+   pfa.css — Page-specific styles
+   ══════════════════════════════════════ */
+
+/* ════════════════════════════════════
+   PFA Stages Section
+   ════════════════════════════════════ */
+.pfa-section {
+  padding: 16px 0 64px;
+}
+
+.pfa-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ── Block ── */
+.pfa-block {
+  display: flex;
+  align-items: stretch;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+
+.pfa-block.pfa-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ── Spine ── */
+.pfa-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 44px;
+  flex-shrink: 0;
+  padding-top: 30px;
+}
+
+.pfa-node {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  background: var(--color-bg);
+  flex-shrink: 0;
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--color-bg);
+  transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.pfa-block.pfa-visible .pfa-node {
+  transform: scale(1.2);
+}
+
+.pfa-connector {
+  flex: 1;
+  width: 2px;
+  min-height: 28px;
+  margin-top: 5px;
+  background: linear-gradient(to bottom, currentColor, transparent);
+  opacity: 0.18;
+}
+
+.pfa-block:last-child .pfa-connector {
+  display: none;
+}
+
+.pfa-block--blue  .pfa-spine { color: var(--color-teal); }
+.pfa-block--green .pfa-spine { color: var(--color-primary-green); }
+.pfa-block--pink  .pfa-spine { color: var(--color-pink); }
+
+
+/* ── Card ── */
+.pfa-card {
+  position: relative;
+  flex: 1;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid transparent;
+  padding: 28px 30px 24px;
+  margin-right: 14px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.pfa-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.pfa-block--blue  .pfa-card { border-color: rgba(77, 189, 181, 0.14);  border-right: 4px solid var(--color-teal); }
+.pfa-block--green .pfa-card { border-color: rgba(91, 168, 90, 0.14);   border-right: 4px solid var(--color-primary-green); }
+.pfa-block--pink  .pfa-card { border-color: rgba(233, 75, 124, 0.13);  border-right: 4px solid var(--color-pink); }
+
+
+/* ── Watermark ── */
+.pfa-wm {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 5.5rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.pfa-block--blue  .pfa-wm { color: var(--color-teal);          opacity: 0.05; }
+.pfa-block--green .pfa-wm { color: var(--color-primary-green); opacity: 0.05; }
+.pfa-block--pink  .pfa-wm { color: var(--color-pink);          opacity: 0.05; }
+
+
+/* ── Card Header ── */
+.pfa-card-hdr {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.pfa-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pfa-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 13px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.pfa-badge-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  font-size: 0.73rem;
+  font-weight: 900;
+}
+
+.pfa-block--blue  .pfa-badge     { color: var(--color-teal);          background: rgba(77, 189, 181, 0.1); }
+.pfa-block--blue  .pfa-badge-num { color: var(--color-teal);          background: rgba(77, 189, 181, 0.13); }
+.pfa-block--green .pfa-badge     { color: var(--color-primary-green); background: rgba(91, 168, 90, 0.1); }
+.pfa-block--green .pfa-badge-num { color: var(--color-primary-green); background: rgba(91, 168, 90, 0.13); }
+.pfa-block--pink  .pfa-badge     { color: var(--color-pink);          background: rgba(233, 75, 124, 0.08); }
+.pfa-block--pink  .pfa-badge-num { color: var(--color-pink);          background: rgba(233, 75, 124, 0.1); }
+
+
+/* ── Icon ── */
+.pfa-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pfa-block--blue  .pfa-icon { background: rgba(77, 189, 181, 0.1);  color: var(--color-teal);          border: 1px solid rgba(77, 189, 181, 0.18); }
+.pfa-block--green .pfa-icon { background: rgba(91, 168, 90, 0.1);   color: var(--color-primary-green); border: 1px solid rgba(91, 168, 90, 0.18); }
+.pfa-block--pink  .pfa-icon { background: rgba(233, 75, 124, 0.08); color: var(--color-pink);          border: 1px solid rgba(233, 75, 124, 0.15); }
+
+
+/* ── Title ── */
+.pfa-title {
+  font-size: clamp(1.05rem, 2.2vw, 1.22rem);
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: var(--lh-subheading);
+  margin: 0;
+  flex: 1;
+}
+
+
+/* ── Bullet Points ── */
+.pfa-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pfa-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+
+.pfa-point.pfa-point-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pfa-marker {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.pfa-block--blue  .pfa-marker { background: rgba(77, 189, 181, 0.11); color: var(--color-teal); }
+.pfa-block--green .pfa-marker { background: rgba(91, 168, 90, 0.12);  color: var(--color-primary-green); }
+.pfa-block--pink  .pfa-marker { background: rgba(233, 75, 124, 0.1);  color: var(--color-pink); }
+
+.pfa-point-text {
+  flex: 1;
+  font-size: var(--font-secondary);
+  line-height: var(--lh-body-ar);
+  color: var(--color-text-medium);
+}
+
+
+/* ════════════════════════════════════
+   Responsive
+   ════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+  .pfa-card {
+    padding: 24px 22px 20px;
+    margin-right: 10px;
+  }
+  .pfa-wm { font-size: 4.5rem; }
+}
+
+@media (max-width: 767px) {
+  .pfa-section { padding-bottom: 40px; }
+  .pfa-spine { width: 34px; padding-top: 24px; }
+  .pfa-node  { width: 14px; height: 14px; }
+  .pfa-card  { padding: 20px 18px 18px; margin-right: 8px; margin-bottom: 18px; }
+  .pfa-wm    { font-size: 4rem; }
+  .pfa-icon  { width: 40px; height: 40px; }
+}
+
+@media (max-width: 479px) {
+  .pfa-section  { padding-bottom: 28px; }
+  .pfa-spine    { width: 28px; padding-top: 20px; }
+  .pfa-node     { width: 12px; height: 12px; border-width: 2.5px; }
+  .pfa-connector { width: 2px; }
+  .pfa-card     { padding: 16px 14px; margin-right: 6px; margin-bottom: 14px; }
+  .pfa-card-hdr { flex-wrap: wrap; gap: 10px; }
+  .pfa-wm       { font-size: 3rem; }
+  .pfa-badge-wrap { gap: 6px; }
+  .pfa-title    { margin-bottom: 0; }
+  .pfa-points   { gap: 8px; }
+}

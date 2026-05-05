@@ -1,0 +1,404 @@
+/* ══════════════════════════════════════
+   emotions.css — Page-specific styles
+   ══════════════════════════════════════ */
+
+/* ════════════════════════════════════
+   Emotion Card Animations
+   ════════════════════════════════════ */
+@keyframes em-tremble {
+  0%,  100% { transform: translate(0, 0) rotate(0deg); }
+  15%        { transform: translate(-3px, 1px) rotate(-0.7deg); }
+  30%        { transform: translate(3px, -1px) rotate(0.7deg); }
+  45%        { transform: translate(-2px, 1px) rotate(-0.4deg); }
+  60%        { transform: translate(2px, -1px) rotate(0.4deg); }
+  75%        { transform: translate(-1px, 0) rotate(-0.2deg); }
+  90%        { transform: translate(1px, 0) rotate(0.2deg); }
+}
+
+@keyframes em-sway {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  25%       { transform: rotate(-3deg) translateY(-4px); }
+  75%       { transform: rotate(3deg) translateY(-2px); }
+}
+
+@keyframes em-pulse-anger {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+@keyframes em-bounce-joy {
+  0%   { transform: translateY(0) scale(1); }
+  25%  { transform: translateY(-10px) scale(1.06); }
+  50%  { transform: translateY(-4px) scale(1.02); }
+  75%  { transform: translateY(-7px) scale(1.04); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes em-closing-glow {
+  0%, 100% { box-shadow: var(--shadow-sm); }
+  50%       { box-shadow: 0 0 0 4px rgba(91, 168, 90, 0.12), var(--shadow-md); }
+}
+
+
+/* ════════════════════════════════════
+   Emotions Grid Section
+   ════════════════════════════════════ */
+.em-grid-section {
+  padding: 8px 0 40px;
+}
+
+.em-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+
+/* ── Base Card ── */
+.em-card {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1.5px solid transparent;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity  0.5s ease,
+    transform 0.5s cubic-bezier(0.34, 1.1, 0.64, 1),
+    box-shadow 0.25s ease;
+}
+
+.em-card.em-card-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.em-card.em-card-vis:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+  transition:
+    box-shadow 0.22s ease,
+    transform 0.25s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+
+/* ── Colored Top Zone — compact, subtle tint ── */
+.em-card-top {
+  position: relative;
+  padding: 14px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+/* Watermark removed */
+.em-card-wm {
+  display: none;
+}
+
+/* Icon circle — smaller, tinted */
+.em-icon-circle {
+  position: relative;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.22s ease;
+  flex-shrink: 0;
+}
+
+.em-icon-circle svg {
+  width: 56%;
+  height: 56%;
+  flex-shrink: 0;
+}
+
+/* Emotion name */
+.em-card-name {
+  position: relative;
+  z-index: 1;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+
+/* ── Hover icon animations per emotion ── */
+.em-card--fear.em-card-vis:hover    .em-icon-circle { animation: em-tremble 0.5s ease; }
+.em-card--sadness.em-card-vis:hover .em-icon-circle { animation: em-sway 1.8s ease infinite; }
+.em-card--anger.em-card-vis:hover   .em-icon-circle { animation: em-pulse-anger 0.65s ease infinite; }
+.em-card--joy.em-card-vis:hover     .em-icon-circle { animation: em-bounce-joy 0.85s ease; }
+
+
+/* ── Card Body ── */
+.em-card-body {
+  flex: 1;
+  background: var(--color-white);
+  padding: 10px 14px 14px;
+  border-top: 1px solid transparent;
+}
+
+.em-card-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--color-text-medium);
+  margin: 0;
+}
+
+
+/* ════════════════════════════════════
+   Color Themes — subtle tinted backgrounds
+   ════════════════════════════════════ */
+
+/* Fear — muted indigo-purple */
+.em-card--fear {
+  border-color: rgba(107, 91, 180, 0.18);
+}
+.em-card--fear .em-card-top {
+  background: linear-gradient(150deg, rgba(123, 111, 212, 0.11) 0%, rgba(74, 63, 140, 0.07) 100%);
+}
+.em-card--fear .em-icon-circle {
+  background: rgba(123, 111, 212, 0.14);
+  border: 2px solid rgba(123, 111, 212, 0.28);
+  color: #5B4FB8;
+}
+.em-card--fear .em-card-name  { color: #4A3F8C; }
+.em-card--fear .em-card-body  { border-top-color: rgba(107, 91, 180, 0.10); }
+
+/* Sadness — steel blue */
+.em-card--sadness {
+  border-color: rgba(62, 117, 162, 0.18);
+}
+.em-card--sadness .em-card-top {
+  background: linear-gradient(150deg, rgba(74, 135, 184, 0.11) 0%, rgba(45, 99, 138, 0.07) 100%);
+}
+.em-card--sadness .em-icon-circle {
+  background: rgba(74, 135, 184, 0.14);
+  border: 2px solid rgba(74, 135, 184, 0.28);
+  color: #3875A8;
+}
+.em-card--sadness .em-card-name  { color: #2D638A; }
+.em-card--sadness .em-card-body  { border-top-color: rgba(62, 117, 162, 0.10); }
+
+/* Anger — coral-red */
+.em-card--anger {
+  border-color: rgba(214, 69, 48, 0.18);
+}
+.em-card--anger .em-card-top {
+  background: linear-gradient(150deg, rgba(224, 92, 58, 0.11) 0%, rgba(190, 53, 32, 0.07) 100%);
+}
+.em-card--anger .em-icon-circle {
+  background: rgba(224, 92, 58, 0.14);
+  border: 2px solid rgba(224, 92, 58, 0.28);
+  color: #C04830;
+}
+.em-card--anger .em-card-name  { color: #A83520; }
+.em-card--anger .em-card-body  { border-top-color: rgba(214, 69, 48, 0.10); }
+
+/* Joy — golden amber */
+.em-card--joy {
+  border-color: rgba(218, 155, 18, 0.18);
+}
+.em-card--joy .em-card-top {
+  background: linear-gradient(150deg, rgba(232, 162, 24, 0.11) 0%, rgba(190, 122, 6, 0.07) 100%);
+}
+.em-card--joy .em-icon-circle {
+  background: rgba(232, 162, 24, 0.14);
+  border: 2px solid rgba(232, 162, 24, 0.28);
+  color: #A87010;
+}
+.em-card--joy .em-card-name  { color: #9A6008; }
+.em-card--joy .em-card-body  { border-top-color: rgba(218, 155, 18, 0.10); }
+
+
+/* ════════════════════════════════════
+   Closing Card
+   ════════════════════════════════════ */
+.em-closing-section {
+  padding: 0 0 64px;
+}
+
+.em-closing-card {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(91, 168, 90, 0.18);
+  border-right: 4px solid var(--color-primary-green);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+
+.em-closing-card.em-closing-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.em-closing-card::before {
+  content: '♥';
+  position: absolute;
+  left: 16px;
+  bottom: -12px;
+  font-size: 5.5rem;
+  line-height: 1;
+  color: var(--color-primary-green);
+  opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
+}
+
+.em-closing-icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: rgba(91, 168, 90, 0.1);
+  border: 1px solid rgba(91, 168, 90, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-green);
+  margin-top: 2px;
+}
+
+.em-closing-text {
+  flex: 1;
+  font-size: var(--font-body);
+  line-height: var(--lh-body-ar);
+  color: var(--color-text-medium);
+  margin: 0;
+}
+
+
+/* ════════════════════════════════════
+   Responsive
+   ════════════════════════════════════ */
+
+/* Tablet: 2×2 grid — more room per card, scale sizes back up */
+@media (max-width: 1023px) {
+  .em-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .em-card-top {
+    padding: 16px 18px 12px;
+    gap: 9px;
+  }
+
+  .em-icon-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .em-card-name {
+    font-size: 1.3rem;
+  }
+
+  .em-card-body {
+    padding: 12px 18px 16px;
+  }
+
+  .em-card-desc {
+    font-size: 0.93rem;
+  }
+}
+
+/* Mobile: 2×2 grid — compact */
+@media (max-width: 767px) {
+  .em-closing-section { padding-bottom: 40px; }
+
+  .em-grid {
+    gap: 0.75rem;
+  }
+
+  .em-card-top {
+    padding: 12px 10px 8px;
+    gap: 7px;
+  }
+
+  .em-icon-circle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .em-card-name {
+    font-size: 1rem;
+  }
+
+  .em-card-body {
+    padding: 8px 10px 12px;
+  }
+
+  .em-card-desc {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  .em-closing-card {
+    padding: 22px 24px;
+    gap: 14px;
+  }
+}
+
+/* Small mobile: still 2×2 — most compact */
+@media (max-width: 479px) {
+  .em-closing-section { padding-bottom: 28px; }
+
+  .em-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .em-grid-section {
+    padding: 8px 0 32px;
+  }
+
+  .em-card-top {
+    padding: 10px 8px 7px;
+    gap: 6px;
+  }
+
+  .em-icon-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .em-card-name {
+    font-size: 0.92rem;
+  }
+
+  .em-card-body {
+    padding: 7px 9px 10px;
+  }
+
+  .em-card-desc {
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .em-closing-card {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .em-closing-card::before {
+    display: none;
+  }
+}

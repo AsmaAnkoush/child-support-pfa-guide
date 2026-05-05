@@ -1,0 +1,34 @@
+/* ═══════════════════════════════════════════════════
+   session-5.css — Pre-step block and dual-key layout
+   ═══════════════════════════════════════════════════ */
+
+/* ── Un-numbered pre-step (التحضير block) ── */
+.s5-prestep {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.s5-prestep-bullet {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.s1-activity--1 .s5-prestep-bullet {
+  background: rgba(233, 75, 124, 0.08);
+  color: var(--color-pink);
+}
+
+/* ── Dual keys list in مفتاحي السري ── */
+.s5-keys-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

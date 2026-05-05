@@ -1,0 +1,275 @@
+/* ══════════════════════════════════════
+   sessions.css — Sessions overview page
+   ══════════════════════════════════════ */
+
+/* ── Sessions page title: decorative bar below the gradient title ── */
+.sess-page-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #E94B7C 30%, #C43869 70%, transparent);
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+
+/* ── Intro text ── */
+.sess-intro {
+  padding: 16px 0 8px;
+}
+
+.sess-intro-text {
+  font-size: var(--font-body);
+  line-height: var(--lh-body-ar);
+  color: var(--color-text-medium);
+  margin: 0;
+}
+
+
+/* ── Grid section ── */
+.sess-section {
+  padding: 20px 0 64px;
+}
+
+.sess-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+
+/* ── Card base ── */
+.sess-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1.5px solid transparent;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+  /* Scroll reveal */
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.34, 1.1, 0.64, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.sess-card.sess-vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sess-card.sess-vis:hover {
+  transform: translateY(-6px) scale(1.02);
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.sess-card.sess-vis:active {
+  transform: translateY(-3px) scale(1);
+  transition-duration: 0.1s;
+}
+
+
+/* ── Card zone (full card — no separate body) ── */
+.sess-card-top {
+  position: relative;
+  padding: 16px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 120px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Arrow indicator — slides in on hover (points left = forward in RTL) */
+.sess-card-top::after {
+  content: '';
+  position: absolute;
+  bottom: 13px;
+  left: 14px;
+  width: 11px;
+  height: 11px;
+  border-top: 2.5px solid rgba(255, 255, 255, 0.85);
+  border-left: 2.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 1px;
+  transform: rotate(-45deg) scale(0.5);
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.sess-card.sess-vis:hover .sess-card-top::after {
+  opacity: 1;
+  transform: rotate(-45deg) scale(1);
+}
+
+
+/* Decorative watermark number */
+.sess-wm {
+  position: absolute;
+  left: -8px;
+  top: -10px;
+  font-size: 5.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+  user-select: none;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.04em;
+  transition:
+    color 0.35s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sess-card.sess-vis:hover .sess-wm {
+  color: rgba(255, 255, 255, 0.22);
+  transform: scale(1.07) translateX(-4px);
+}
+
+
+.sess-card-title {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 4px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  line-height: 1.35;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sess-card.sess-vis:hover .sess-card-title {
+  transform: translateX(-3px);
+}
+
+
+.sess-card-subtitle {
+  position: relative;
+  z-index: 1;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  line-height: 1.55;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.03s;
+}
+
+.sess-card.sess-vis:hover .sess-card-subtitle {
+  transform: translateX(-3px);
+}
+
+
+/* ════════════════════════════════════
+   Color Themes
+   ════════════════════════════════════ */
+
+/* Pink — Session 1 */
+.sess-card--pink { border-color: rgba(233, 75, 124, 0.22); }
+.sess-card--pink .sess-card-top { background: linear-gradient(135deg, #E94B7C 0%, #C43869 100%); }
+.sess-card--pink.sess-vis:hover {
+  box-shadow: 0 20px 48px rgba(233, 75, 124, 0.3), 0 8px 20px rgba(233, 75, 124, 0.14);
+  border-color: rgba(233, 75, 124, 0.42);
+}
+
+/* Green — Session 2 */
+.sess-card--green { border-color: rgba(91, 168, 90, 0.22); }
+.sess-card--green .sess-card-top { background: linear-gradient(135deg, #5BA85A 0%, #3D7C3C 100%); }
+.sess-card--green.sess-vis:hover {
+  box-shadow: 0 20px 48px rgba(91, 168, 90, 0.3), 0 8px 20px rgba(91, 168, 90, 0.14);
+  border-color: rgba(91, 168, 90, 0.42);
+}
+
+/* Coral — Session 3 */
+.sess-card--coral { border-color: rgba(224, 92, 58, 0.22); }
+.sess-card--coral .sess-card-top { background: linear-gradient(135deg, #E05C3A 0%, #BE3520 100%); }
+.sess-card--coral.sess-vis:hover {
+  box-shadow: 0 20px 48px rgba(224, 92, 58, 0.3), 0 8px 20px rgba(224, 92, 58, 0.14);
+  border-color: rgba(224, 92, 58, 0.42);
+}
+
+/* Teal — Session 4 */
+.sess-card--teal { border-color: rgba(77, 189, 181, 0.22); }
+.sess-card--teal .sess-card-top { background: linear-gradient(135deg, #4DBDB5 0%, #2A9992 100%); }
+.sess-card--teal.sess-vis:hover {
+  box-shadow: 0 20px 48px rgba(77, 189, 181, 0.3), 0 8px 20px rgba(77, 189, 181, 0.14);
+  border-color: rgba(77, 189, 181, 0.42);
+}
+
+/* Purple — Session 5 */
+.sess-card--purple { border-color: rgba(123, 111, 212, 0.22); }
+.sess-card--purple .sess-card-top { background: linear-gradient(135deg, #7B6FD4 0%, #4A3F8C 100%); }
+.sess-card--purple.sess-vis:hover {
+  box-shadow: 0 20px 48px rgba(123, 111, 212, 0.3), 0 8px 20px rgba(123, 111, 212, 0.14);
+  border-color: rgba(123, 111, 212, 0.42);
+}
+
+/* Gold — Session 6 */
+.sess-card--gold { border-color: rgba(232, 162, 24, 0.22); }
+.sess-card--gold .sess-card-top { background: linear-gradient(135deg, #E8A218 0%, #BE7A06 100%); }
+.sess-card--gold.sess-vis:hover {
+  box-shadow: 0 20px 48px rgba(232, 162, 24, 0.3), 0 8px 20px rgba(232, 162, 24, 0.14);
+  border-color: rgba(232, 162, 24, 0.42);
+}
+
+/* Coming-soon state */
+.sess-card--coming { cursor: default; opacity: 0.7; }
+.sess-card--coming:hover { transform: none !important; box-shadow: var(--shadow-md) !important; }
+
+
+/* ════════════════════════════════════
+   Reduced motion
+   ════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .sess-card,
+  .sess-wm,
+  .sess-card-title,
+  .sess-card-subtitle,
+  .sess-card-top::after {
+    transition: opacity 0.2s ease !important;
+    transform: none !important;
+  }
+  .sess-card.sess-vis { opacity: 1; }
+  .sess-card.sess-vis:hover { transform: none !important; }
+}
+
+
+/* ════════════════════════════════════
+   Responsive
+   ════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+  .sess-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .sess-section { padding-bottom: 48px; }
+}
+
+@media (max-width: 767px) {
+  .sess-section { padding-bottom: 40px; }
+  .sess-grid { grid-template-columns: 1fr; gap: 10px; }
+  .sess-card-top { padding: 14px 16px 12px; min-height: 100px; }
+  .sess-wm { font-size: clamp(4rem, 12vw, 5rem); left: -7px; top: -8px; }
+  .sess-card-title { font-size: clamp(1rem, 3.5vw, 1.15rem); }
+  .sess-card-subtitle { font-size: 0.88rem; }
+  .sess-card-top::after { bottom: 12px; left: 12px; }
+}
+
+@media (max-width: 479px) {
+  .sess-section { padding-bottom: 28px; }
+  .sess-grid { gap: 8px; }
+  .sess-card-top { padding: 12px 14px 10px; min-height: 88px; }
+  .sess-wm { font-size: clamp(3.5rem, 13vw, 4.5rem); }
+  .sess-card-title { font-size: clamp(0.95rem, 4vw, 1.05rem); }
+  .sess-card-top::after { bottom: 10px; left: 10px; width: 9px; height: 9px; }
+}

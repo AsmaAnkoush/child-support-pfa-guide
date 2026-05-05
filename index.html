@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دليل الميسّرين للعمل مع الأطفال</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/search.css" />
+</head>
+<body>
+  <a href="#next-section" class="skip-to-content">الانتقال للمحتوى الرئيسي</a>
+
+  <header class="navbar">
+    <div class="navbar-container">
+
+      <!-- Logo (right side in RTL) -->
+      <a href="#/" class="navbar-logo" aria-label="الصفحة الرئيسية - مدرسة البلد" data-route-link="home">
+        <img src="images/logo.png" alt="شعار مدرسة البلد" />
+      </a>
+
+      <!-- Navigation menu (center, desktop only) -->
+      <nav class="navbar-menu">
+        <ul>
+          <li><a href="#/" class="active">الرئيسية</a></li>
+          <li><a href="#/about">عن الدليل</a></li>
+          <li><a href="#/principles">المبادئ</a></li>
+          <li><a href="#/group-management">إدارة المجموعة</a></li>
+          <li><a href="#/emotions">المشاعر</a></li>
+          <li><a href="#/pfa-approach">نهج PFA</a></li>
+          <li><a href="#/sessions">اللقاءات</a></li>
+          <li><a href="#/conclusion">الخاتمة</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions group: search + hamburger (left side in RTL) -->
+      <div class="navbar-actions">
+        <button class="navbar-search" aria-label="بحث (Ctrl+K)" title="بحث">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" />
+            <line x1="13.5" y1="13.5" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <span class="navbar-search-tooltip">ابحث <kbd>Ctrl+K</kbd></span>
+        </button>
+        <button class="navbar-hamburger" id="hamburger-btn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ── Home View (shown when route is #/) ── -->
+  <div id="home-view">
+
+  <!-- ── Hero Section ── -->
+  <section class="hero">
+    <div class="hero-container">
+
+      <!-- Right column: text content (RTL) -->
+      <div class="hero-content">
+        <div class="hero-year">2026</div>
+
+        <h1>
+          <span class="hero-title-green">دليل الميسّرات</span>
+          <span class="hero-title-pink">والميسّرين</span>
+          <span class="hero-title-sub">للعمل مع الأطفال</span>
+        </h1>
+        <p>إجراءات توجيهية في العمل مع مجموعات الأطفال<br>باستخدام نهج الإسعاف النفسي الأولي (PFA) وقت الطوارئ والأزمات</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary btn-hero-cta" id="btn-start">
+            تصفّح الدليل
+            <svg class="btn-arrow" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 3V15M9 15L4 10M9 15L14 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Left column: visual (RTL) -->
+      <div class="hero-visual">
+
+        <!-- Soft background glow blobs -->
+        <div class="hero-glow hero-glow--pink"></div>
+        <div class="hero-glow hero-glow--green"></div>
+
+        <!-- Main image with organic blob shape -->
+        <div class="hero-image-wrapper">
+          <img src="images/hero-children.png" alt="ميسّر مع أطفال" />
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Introduction (مقدمة) ── -->
+  <section class="intro-section" id="next-section">
+    <div class="container">
+      <div class="intro-card">
+
+        <!-- Background blob decorations -->
+        <div class="intro-blob intro-blob--pink"></div>
+        <div class="intro-blob intro-blob--green"></div>
+
+        <!-- Text content (right column in RTL) -->
+        <div class="intro-content">
+
+          <h2 class="intro-title">مقدمة</h2>
+          <span class="intro-title-bar"></span>
+
+          <p class="intro-paragraph">يأتي هذا الدليل ضمن إطار مشروع <strong class="intro-hl-green">"مدرسة البلد"</strong> الذي ينفّذه <strong class="intro-hl-teal">مركز التعليم المستمر في جامعة بيرزيت</strong>، بدعم من منظمة <strong class="intro-hl-pink">اليونيسف (UNICEF)</strong>. يهدف المشروع إلى دعم التعلم وتعزيز رفاهية الأطفال في المناطق التي تعاني من الاعتداءات المستمرة من المستوطنين والاحتلال في جنوب نابلس، إضافة إلى تقديم الدعم النفسي والاجتماعي.</p>
+
+          <p class="intro-paragraph">يركز المشروع على تمكين مراكز التعلم المجتمعي وتوفير بيئة تعليمية شاملة، آمنة وداعمة لما يقارب <strong class="intro-hl-num">1500 طفل وطفلة</strong>، وذلك من خلال تبني حلول تعليمية مبتكرة تراعي السياق المحلي والتحديات الراهنة. يتم تنفيذ المشروع في خمس قرى جنوب محافظة نابلس: <span class="intro-village">جالود</span>، <span class="intro-village">قريوت</span>، <span class="intro-village">قصرة</span>، <span class="intro-village">اللبن الشرقية</span>، و<span class="intro-village">الساوية</span>.</p>
+
+        </div>
+
+        <!-- Stat ring (left column in RTL) -->
+        <div class="intro-stat-wrap">
+          <div class="intro-stat-ring">
+            <span class="intro-stat-num">0</span>
+            <span class="intro-stat-unit">طفل وطفلة</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Project Goals (أهداف المشروع) ── -->
+  <section class="goals-section">
+    <div class="container">
+      <div class="block-card">
+
+      <div class="goals-header">
+        <h2 class="goals-title">أهداف المشروع</h2>
+        <div class="goals-header-bar"></div>
+      </div>
+
+      <div class="goals-grid">
+
+        <div class="goals-card goals-card--pink">
+          <div class="goals-card-num">1</div>
+          <p class="goals-text">تعزيز التعلم والدعم النفسي والاجتماعي للأطفال من الفئة العمرية <span class="goals-age">6 – 15 سنة</span>.</p>
+        </div>
+
+        <div class="goals-card goals-card--green">
+          <div class="goals-card-num">2</div>
+          <p class="goals-text">بناء قدرات مراكز التعلم المجتمعي لضمان استدامة الخدمات التعليمية.</p>
+        </div>
+
+        <div class="goals-card goals-card--teal">
+          <div class="goals-card-num">3</div>
+          <p class="goals-text">تطوير حلول تعليمية مبتكرة تتناسب مع احتياجات المجتمع.</p>
+        </div>
+
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── عن الدليل (About the Guide - detailed) ── -->
+  <section class="guide-about-section">
+    <div class="container">
+      <div class="block-card block-card--guide">
+
+      <!-- Section header -->
+      <div class="guide-about-hdr">
+        <h2 class="guide-about-hdr-title">عن الدليل</h2>
+        <div class="guide-about-hdr-bar"></div>
+      </div>
+
+      <!-- Main content card -->
+      <div class="guide-about-card">
+
+        <div class="guide-about-body">
+          <p class="guide-about-para">تم إعداد هذا الدليل لميسّري جلسات الدعم النفسي الاجتماعي الجماعية ضمن مشروع <strong class="gab-hl-green">"مدرسة البلد"</strong>، بهدف تمكينهم من العمل مع الأطفال في الفئة العمرية من <strong class="gab-hl-badge">6 إلى 15 عامًا</strong>، لا سيما في سياقات <strong class="gab-hl-pink">الأزمات والطوارئ</strong>.</p>
+          <p class="guide-about-para">يوفّر الدليل إرشادات عملية وآمنة لإدارة ديناميكيات المجموعات بطريقة داعمة، بالاستناد إلى مبادئ <strong class="gab-hl-teal">الإسعاف النفسي الأولي</strong>. وتُستخدم هذه الإرشادات أثناء الجلسات التي تُنفذ في أماكن آمنة ك<span class="gab-hl-place">المراكز المجتمعية أو المدارس</span>، بهدف توفير مساحة تمكّن الأطفال من التعبير عن مشاعرهم والتكيّف مع التحديات النفسية والاجتماعية التي يواجهونها.</p>
+        </div>
+
+      </div>
+
+      <!-- Warning note -->
+      <div class="guide-warning" role="note" aria-label="ملاحظة مهمة">
+        <p class="guide-warning-title">⚠ ملاحظة مهمة:</p>
+        <p class="guide-warning-text">هذا الدليل <strong class="gab-whl">لا يغطي الجوانب العلاجية أو التشخيصية</strong> العميقة للحالات النفسية. الميسرون لا يُتوقع منهم أن يؤدوا دور الأخصائي النفسي أو المعالج، بل أن يكونوا <strong class="gab-whl-green">حضورًا داعمًا وآمنًا</strong>، ويُحيلوا الحالات التي تتطلب تدخلًا متخصصًا إلى <strong class="gab-whl">الجهات المختصة</strong>.</p>
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── قائمة المحتويات ── -->
+  <section class="toc-section" id="contents">
+    <div class="container">
+      <div class="block-card">
+
+        <div class="toc-header">
+          <h2 class="toc-heading">قائمة المحتويات</h2>
+          <div class="toc-heading-bar"></div>
+        </div>
+
+        <ul class="toc-list" role="list">
+
+          <li class="toc-item">
+            <a href="#/principles" class="toc-card">
+              <span class="toc-card-num">1</span>
+              <h3 class="toc-card-title">المبادئ العامة</h3>
+              <svg class="toc-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+
+          <li class="toc-item">
+            <a href="#/group-management" class="toc-card">
+              <span class="toc-card-num">2</span>
+              <h3 class="toc-card-title">تكوين المجموعة وتعزيز الدمج وشمل الجميع</h3>
+              <svg class="toc-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+
+          <li class="toc-item">
+            <a href="#/group-procedures" class="toc-card">
+              <span class="toc-card-num">3</span>
+              <h3 class="toc-card-title">إجراءات إدارة المجموعة</h3>
+              <svg class="toc-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+
+          <li class="toc-item">
+            <a href="#/emotions" class="toc-card">
+              <span class="toc-card-num">4</span>
+              <h3 class="toc-card-title">فهم المشاعر الأساسية</h3>
+              <svg class="toc-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+
+          <li class="toc-item">
+            <a href="#/group-interaction" class="toc-card">
+              <span class="toc-card-num">5</span>
+              <h3 class="toc-card-title">إدارة تفاعل المجموعة ودعم الأطفال غير المتفاعلين بشكل صحي</h3>
+              <svg class="toc-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+
+          <li class="toc-item">
+            <a href="#/pfa-approach" class="toc-card">
+              <span class="toc-card-num">6</span>
+              <h3 class="toc-card-title">إرشادات التيسير باستخدام نهج PFA الاسعاف النفسي الأولي</h3>
+              <svg class="toc-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+
+          <li class="toc-item">
+            <a href="#/difficult-behaviors" class="toc-card">
+              <span class="toc-card-num">7</span>
+              <h3 class="toc-card-title">إدارة السلوكيات الصعبة</h3>
+              <svg class="toc-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+
+          <li class="toc-item">
+            <a href="#/sessions" class="toc-card">
+              <span class="toc-card-num">8</span>
+              <h3 class="toc-card-title">خطة عمل اللقاءات الستة</h3>
+              <svg class="toc-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── خاتمة ── -->
+  <section class="conclusion-section" id="conclusion-home">
+    <div class="container">
+      <div class="block-card">
+
+        <div class="concl-home-hdr">
+          <h2 class="concl-home-title">خاتمة</h2>
+          <div class="concl-home-bar"></div>
+        </div>
+
+        <blockquote class="concl-home-featured">
+          العمل مع الأطفال في سياقات الأزمات ليس مهمة سهلة، لكنه من أكثر الأدوار إنسانية وتأثيراً. يمثّل هذا الدليل أداة عملية لمرافقتهم في بيئة آمنة وداعمة، من خلال أنشطة مبنية على مبادئ الإسعاف النفسي الأولي. وهو لا يغني عن التخصص، لكنه يوفر إطارًا مبسّطاً لميسّرين وميسّرات يعملون في ظروف حساسة، مع أطفال يحتاجون إلى من يُنصت، يُطمئن، ويُقدّر مشاعرهم.
+        </blockquote>
+
+        <p class="concl-home-para">هذا الدليل هو نقطة انطلاق لمسيرة من الإصغاء والدعم والرعاية. كل لقاء تُنفّذونه وفق هذا المرجع هو خطوة صغيرة في خلق بيئة أكثر احتواءً وثقة.</p>
+
+        <p class="concl-home-para">كل جلسة تُنفذ بمحبة، وكل لحظة إنصات صادق، وكل نشاط يُمارس بوعي… تترك أثرًا لا يُنسى في حياة طفل. وجودكم الآمن والداعم هو ما يصنع الفرق، وأنتم البداية الحقيقية لكل مساحة آمنة.</p>
+
+        <div class="concl-home-cta">
+          <p class="concl-home-cta-text">استخدموا هذا الدليل كأداة مرنة تتكيّفون معها، لا كنصّ جامد. لاحظوا، اسألوا، استمعوا، وكونوا حاضرين، بكل قلوبكم ووعيكم. نثق بقدرتكم على إحداث فرق حقيقي، خطوة بخطوة، وطفلاً وطفلةً.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /home-view -->
+
+  <!-- ── Dynamic page content ── -->
+  <div id="page-view" style="display:none"></div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logos">
+        <img src="images/logo.png" alt="مدرسة البلد" style="height: 52px; width: auto; object-fit: contain;" />
+        <img src="images/cce-logo.png" alt="مركز التعليم المستمر - جامعة بيرزيت" style="height: 52px; width: auto; max-width: 180px; object-fit: contain;" />
+        <img src="images/unicef-logo.png" alt="منظمة اليونيسف - UNICEF" style="height: 52px; width: auto; max-width: 180px; object-fit: contain;" />
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Mobile Drawer ── -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="القائمة الرئيسية">
+    <div class="mobile-drawer-header">
+      <a href="#/" class="navbar-logo" aria-label="العودة للصفحة الرئيسية">
+        <img src="images/logo.png" alt="شعار مدرسة البلد" style="height: 44px; width: auto;" />
+      </a>
+      <button class="mobile-drawer-close" id="drawer-close" aria-label="إغلاق القائمة">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="mobile-drawer-nav">
+      <ul>
+        <li><a href="#/" class="active">الرئيسية</a></li>
+        <li><a href="#/about">عن الدليل</a></li>
+        <li><a href="#/principles">المبادئ</a></li>
+        <li><a href="#/group-management">إدارة المجموعة</a></li>
+        <li><a href="#/emotions">المشاعر</a></li>
+        <li><a href="#/pfa-approach">نهج PFA</a></li>
+        <li><a href="#/sessions">اللقاءات</a></li>
+        <li><a href="#/conclusion">الخاتمة</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <script src="js/search.js"></script>
+  <script src="js/routing.js"></script>
+
+  <script>
+    (function () {
+      var btn     = document.getElementById('hamburger-btn');
+      var drawer  = document.getElementById('mobile-drawer');
+      var overlay = document.getElementById('mobile-overlay');
+      var close   = document.getElementById('drawer-close');
+
+      function open() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', 'إغلاق القائمة');
+        document.body.style.overflow = 'hidden';
+        close.focus();
+      }
+
+      function shut() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'فتح القائمة');
+        document.body.style.overflow = '';
+        btn.focus();
+      }
+
+      btn.addEventListener('click', open);
+      close.addEventListener('click', shut);
+      overlay.addEventListener('click', shut);
+
+      drawer.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', shut);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) shut();
+      });
+    })();
+
+    /* ── About Guide section: scroll-reveal ── */
+    (function () {
+      var section = document.querySelector('.guide-about-section');
+      if (!section) return;
+      var card    = section.querySelector('.guide-about-card');
+      var warning = section.querySelector('.guide-warning');
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var done    = false;
+
+      function activate() {
+        if (done) return;
+        done = true;
+        if (card) card.classList.add('guide-visible');
+        if (warning) {
+          if (reduced) {
+            warning.classList.add('guide-visible');
+          } else {
+            setTimeout(function () { warning.classList.add('guide-visible'); }, 220);
+          }
+        }
+      }
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries, obs) {
+          if (!entries[0].isIntersecting) return;
+          obs.disconnect();
+          activate();
+        }, { threshold: 0.12 }).observe(section);
+      } else {
+        activate();
+      }
+    })();
+
+    /* ── Goals section: stagger reveal ── */
+    (function () {
+      var grid    = document.querySelector('.goals-grid');
+      if (!grid) return;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var done    = false;
+
+      function activate() {
+        if (done) return;
+        done = true;
+        grid.querySelectorAll('.goals-card').forEach(function (card, i) {
+          setTimeout(function () {
+            card.classList.add('goals-visible');
+          }, reduced ? 0 : i * 170);
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries, obs) {
+          if (!entries[0].isIntersecting) return;
+          obs.disconnect();
+          activate();
+        }, { threshold: 0.12 }).observe(grid);
+      } else {
+        activate();
+      }
+    })();
+
+    /* ── Introduction: scroll-reveal + count-up ── */
+    (function () {
+      var card  = document.querySelector('.intro-card');
+      if (!card) return;
+      var numEl = card.querySelector('.intro-stat-num');
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var done  = false;
+
+      function activate() {
+        if (done) return;
+        done = true;
+        card.classList.add('intro-visible');
+        if (!numEl || reduced) return;
+        var target   = 1500;
+        var duration = 1800;
+        var t0       = null;
+        function tick(ts) {
+          if (!t0) t0 = ts;
+          var p   = Math.min((ts - t0) / duration, 1);
+          var val = Math.round((1 - Math.pow(1 - p, 3)) * target);
+          numEl.textContent = val;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function(entries, obs) {
+          if (!entries[0].isIntersecting) return;
+          obs.disconnect();
+          activate();
+        }, { threshold: 0.2 }).observe(card);
+      } else {
+        activate();
+      }
+    })();
+
+    /* ── TOC: stagger reveal ── */
+    (function () {
+      var section = document.querySelector('.toc-section');
+      if (!section) return;
+      var items  = section.querySelectorAll('.toc-item');
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var done   = false;
+
+      function activate() {
+        if (done) return;
+        done = true;
+        items.forEach(function (item, i) {
+          setTimeout(function () {
+            item.classList.add('toc-visible');
+          }, reduced ? 0 : i * 65);
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries, obs) {
+          if (!entries[0].isIntersecting) return;
+          obs.disconnect();
+          activate();
+        }, { threshold: 0.08 }).observe(section);
+      } else {
+        activate();
+      }
+    })();
+
+    /* ── Navbar: scroll-aware frosted glass ── */
+    (function () {
+      var navbar = document.querySelector('.navbar');
+      if (!navbar) return;
+      function onScroll() {
+        navbar.classList.toggle('scrolled', window.scrollY > 20);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    /* ── Search: Ctrl+K / ⌘K keyboard shortcut ── */
+    (function () {
+      var searchBtn = document.querySelector('.navbar-search');
+      if (!searchBtn) return;
+      document.addEventListener('keydown', function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          searchBtn.click();
+        }
+      });
+    })();
+
+    /* ── Hero CTA scroll ── */
+    (function () {
+      function scrollToNext() {
+        var target = document.getElementById('next-section');
+        if (!target) return;
+        var navbar = document.querySelector('.navbar');
+        var offset = navbar ? navbar.offsetHeight : 0;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset - 12;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+
+      var btn  = document.getElementById('btn-start');
+      var hint = document.querySelector('.hero-scroll-hint');
+      if (btn)  btn.addEventListener('click', scrollToNext);
+      if (hint) hint.addEventListener('click', scrollToNext);
+    })();
+  </script>
+
+</body>
+</html>

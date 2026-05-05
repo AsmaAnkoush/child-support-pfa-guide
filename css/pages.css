@@ -1,0 +1,151 @@
+/* ══════════════════════════════════════
+   pages.css — Shared content-page components
+   Used by all inner pages (principles, group-management, etc.)
+   ══════════════════════════════════════ */
+
+/* ══════════════════════════════════════
+   Page Hero
+   ══════════════════════════════════════ */
+.pg-hero {
+  padding: 40px 0 6px;
+  text-align: center;
+}
+
+.pg-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-eyebrow);
+  font-weight: 700;
+  color: var(--color-primary-green);
+  background: rgba(91, 168, 90, 0.09);
+  border: 1px solid rgba(91, 168, 90, 0.2);
+  border-radius: var(--radius-full);
+  padding: 4px 12px 4px 10px;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.pg-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 20px;
+  background: linear-gradient(135deg, #E94B7C 0%, #C43869 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pg-title-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pg-title-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ══════════════════════════════════════
+   Intro Card
+   ══════════════════════════════════════ */
+.pg-intro {
+  padding: 20px 0 4px;
+}
+
+.pg-intro-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(91, 168, 90, 0.15);
+  border-right: 4px solid var(--color-primary-green);
+  padding: 22px 26px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.pg-intro-card::before {
+  content: '"';
+  position: absolute;
+  left: 18px;
+  bottom: -16px;
+  font-size: 7rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-primary-green);
+  opacity: 0.045;
+  pointer-events: none;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.pg-intro-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(91, 168, 90, 0.09);
+  border: 1px solid rgba(91, 168, 90, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-green);
+  margin-top: 2px;
+}
+
+.pg-intro-text {
+  flex: 1;
+  font-size: var(--font-body);
+  line-height: var(--lh-body-ar);
+  color: var(--color-text-medium);
+  margin: 0;
+}
+
+
+/* ══════════════════════════════════════
+   Responsive (shared page components)
+   ══════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+  .pg-hero {
+    padding: 32px 0 6px;
+  }
+}
+
+@media (max-width: 767px) {
+  .pg-hero {
+    padding: 24px 0 6px;
+  }
+
+  .pg-intro-card {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+
+  .pg-intro-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 479px) {
+  .pg-hero {
+    padding: 20px 0 4px;
+  }
+
+  .pg-intro-card {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .pg-intro-card::before {
+    display: none;
+  }
+}
+
+.ptl-badge-wrap,
+.gp-badge-wrap,
+.pfa-badge-wrap { display: none; }
