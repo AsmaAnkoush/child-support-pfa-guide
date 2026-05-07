@@ -123,8 +123,10 @@
 
 /* ── Card Header ── */
 .pfa-card-hdr {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
   gap: 0.85rem;
   margin-bottom: 16px;
 }
@@ -169,10 +171,10 @@
   width: 46px;
   height: 46px;
   border-radius: var(--radius-sm);
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
 }
 
 .pfa-block--blue  .pfa-icon { background: rgba(77, 189, 181, 0.1);  color: var(--color-teal);          border: 1px solid rgba(77, 189, 181, 0.18); }
@@ -188,6 +190,7 @@
   line-height: var(--lh-subheading);
   margin: 0;
   flex: 1;
+  min-width: 0;
 }
 
 

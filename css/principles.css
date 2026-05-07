@@ -301,8 +301,10 @@ a.pnb-crumb:hover {
 
 /* ── Card Header ── */
 .ptl-card-hdr {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
   gap: 0.85rem;
   margin-bottom: 16px;
 }
@@ -349,10 +351,10 @@ a.pnb-crumb:hover {
   width: 46px;
   height: 46px;
   border-radius: var(--radius-sm);
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
 }
 
 .ptl-block--green .ptl-icon { background: rgba(91, 168, 90, 0.1);  color: var(--color-primary-green); border: 1px solid rgba(91, 168, 90, 0.18); }
@@ -368,6 +370,7 @@ a.pnb-crumb:hover {
   line-height: var(--lh-subheading);
   margin: 0;
   flex: 1;
+  min-width: 0;
 }
 
 
