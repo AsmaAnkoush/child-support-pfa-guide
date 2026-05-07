@@ -7,7 +7,7 @@
    Page Hero
    ══════════════════════════════════════ */
 .pg-hero {
-  padding: 40px 0 6px;
+  padding: 16px 0 6px;
   text-align: center;
   overflow: visible;
 }
@@ -31,16 +31,15 @@
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.55;
+  line-height: 1.4;
   text-align: center;
-  margin: 0 0 20px;
-  padding: 0.2rem 0 0.3rem;
+  margin: 0 0 2rem;
+  padding: 0.2em 0;
   display: block;
   overflow: visible;
-  background: linear-gradient(135deg, #E94B7C 0%, #C43869 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #C73968;
+  background: none;
+  -webkit-text-fill-color: #C73968;
   animation: pg-title-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -86,6 +85,7 @@
 }
 
 .pg-intro-icon {
+  display: none;
   flex-shrink: 0;
   width: 42px;
   height: 42px;
@@ -114,13 +114,13 @@
 
 @media (max-width: 1023px) {
   .pg-hero {
-    padding: 32px 0 6px;
+    padding: 12px 0 6px;
   }
 }
 
 @media (max-width: 767px) {
   .pg-hero {
-    padding: 24px 0 6px;
+    padding: 10px 0 6px;
   }
 
   .pg-intro-card {
@@ -136,7 +136,7 @@
 
 @media (max-width: 479px) {
   .pg-hero {
-    padding: 20px 0 4px;
+    padding: 8px 0 4px;
   }
 
   .pg-intro-card {
@@ -153,3 +153,22 @@
 .ptl-badge-wrap,
 .gp-badge-wrap,
 .pfa-badge-wrap { display: none; }
+
+/* ── Page title override — solid dark pink, centered ── */
+.pg-title,
+.page-title,
+[class*="pg-title"],
+[class*="page-title"] {
+  text-align: center !important;
+  color: #C73968 !important;
+  background: none !important;
+  -webkit-text-fill-color: #C73968 !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem) !important;
+  font-weight: 800 !important;
+  margin: 0.5rem auto 2rem auto !important;
+  padding-top: 0 !important;
+  display: block !important;
+  width: 100% !important;
+}

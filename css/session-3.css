@@ -97,6 +97,7 @@
   align-items: center;
   gap: 7px;
   padding: 8px 22px;
+  min-height: 44px;
   border-radius: var(--radius-full);
   border: 2px solid rgba(0, 0, 0, 0.12);
   background: transparent;
@@ -204,6 +205,11 @@
 }
 
 /* ── Responsive ── */
+@media (max-width: 1023px) {
+  .s3-act-hdr   { padding: 16px 20px 0; }
+  .s3-track-hdr { padding: 16px 20px 0; }
+}
+
 @media (max-width: 767px) {
   .s3-act-hdr   { padding: 14px 18px 0; }
   .s3-track-hdr { padding: 14px 18px 0; }

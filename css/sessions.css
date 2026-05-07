@@ -2,18 +2,6 @@
    sessions.css — Sessions overview page
    ══════════════════════════════════════ */
 
-/* ── Sessions page title: decorative bar below the gradient title ── */
-.sess-page-title::after {
-  content: '';
-  display: block;
-  width: 48px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #E94B7C 30%, #C43869 70%, transparent);
-  border-radius: 2px;
-  margin: 10px auto 0;
-}
-
-
 /* ── Intro text ── */
 .sess-intro {
   padding: 16px 0 8px;
@@ -29,7 +17,7 @@
 
 /* ── Grid section ── */
 .sess-section {
-  padding: 20px 0 64px;
+  padding: 6px 0 64px;
 }
 
 .sess-grid {

@@ -153,6 +153,10 @@
 }
 
 /* ── Responsive ── */
+@media (max-width: 1023px) {
+  .s6-congrats { padding: 28px 24px; }
+}
+
 @media (max-width: 767px) {
   .s6-congrats { padding: 26px 20px; }
 }

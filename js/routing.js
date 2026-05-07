@@ -15,27 +15,29 @@
     '/emotions':            'emotions.html',
     '/group-interaction':   'group-interaction.html',
     '/pfa-approach':        'pfa.html',
-    '/difficult-behaviors': 'difficult-behaviors.html',
-    '/sessions':            'sessions.html',
-    '/sessions/1':          'session-1.html',
-    '/sessions/2':          'session-2.html',
-    '/sessions/3':          'session-3.html',
-    '/sessions/4':          'session-4.html',
-    '/sessions/5':          'session-5.html',
-    '/sessions/6':          'session-6.html',
+    '/difficult-behaviors':  'difficult-behaviors.html',
+    '/sessions':             'sessions.html',
+    '/sessions/1':           'session-1.html',
+    '/sessions/2':           'session-2.html',
+    '/sessions/3':           'session-3.html',
+    '/sessions/4':           'session-4.html',
+    '/sessions/5':           'session-5.html',
+    '/sessions/6':           'session-6.html',
+    '/children-message':     'children-message.html',
   };
 
   /* ── Nav href → routes it makes "active" ────────── */
   var NAV_ACTIVE = {
     '#/':                  ['/', ''],
-    '#/#about-section':    ['/about', '/#about-section'],
+    '#/#next-section':     ['/about', '/#next-section'],
     '#/#conclusion-home':  ['/conclusion', '/#conclusion-home'],
     '#/principles':     ['/principles'],
     '#/group-management': ['/group-management', '/group-procedures',
                            '/group-interaction', '/difficult-behaviors'],
     '#/emotions':       ['/emotions'],
     '#/pfa-approach':   ['/pfa-approach'],
-    '#/sessions':       ['/sessions', '/sessions/1', '/sessions/2', '/sessions/3', '/sessions/4', '/sessions/5', '/sessions/6'],
+    '#/sessions':          ['/sessions', '/sessions/1', '/sessions/2', '/sessions/3', '/sessions/4', '/sessions/5', '/sessions/6'],
+    '#/children-message':  ['/children-message'],
   };
 
   /* ── Reveal-class map for all pages ─────────────── */
@@ -58,12 +60,12 @@
     ['.s1-session-close',  's1-vis'],
     ['.s4-secret-key',     's1-vis'],
     ['.s6-congrats',       's1-vis'],
-    ['.concl-card',        'concl-vis'],
+    ['.concl-card',         'concl-vis'],
   ];
 
   /* ── Shared CSS already present in index.html ───── */
   var SKIP_CSS = ['variables.css', '/style.css', 'responsive.css',
-                  'fonts.googleapis', 'fonts.gstatic'];
+                  'fonts.googleapis', 'fonts.gstatic', 'pages.css'];
 
   var homeView, pageView;
   var pageCache  = {};
@@ -238,8 +240,8 @@
     var route = getRoute();
 
     /* About → scroll to guide-about section on home */
-    if (route === '/about' || route === '/#about-section') {
-      showHome('#about-section');
+    if (route === '/about' || route === '/#next-section') {
+      showHome('#next-section');
       return;
     }
 

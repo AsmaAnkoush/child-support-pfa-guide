@@ -220,7 +220,8 @@ html, body {
 /* ── Large Desktop (1440px+) ── */
 @media (min-width: 1440px) {
   .hero-container {
-    gap: 80px;
+    gap: 24px;
+    max-width: 1280px;
   }
 
   .sess-grid {
@@ -243,7 +244,7 @@ html, body {
   }
 
   .hero-container {
-    gap: 40px;
+    gap: 12px;
   }
 
   .toc-list {
@@ -278,21 +279,27 @@ html, body {
   }
 
   /* Hero */
+  .hero {
+    height: calc(100vh - 88px - 70px);
+  }
+
   .hero-container {
-    gap: 28px;
-    padding: 0 24px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 20px;
   }
 
   .hero-content {
-    padding-right: 1.5rem;
+    padding-left: 0;
+    margin-left: 0;
   }
 
   .hero-image-wrapper {
-    max-width: 360px;
+    max-width: 290px;
   }
 
   .hero-visual {
-    padding: 20px;
+    padding: 14px 16px;
   }
 
   /* Stats: wrap into 2x2 */
@@ -323,6 +330,15 @@ html, body {
     padding: 16px 0 28px;
   }
 
+  /* Footer */
+  .footer { padding: 0.7rem 0 !important; }
+  .footer-logos { gap: 2rem !important; }
+  .footer-logos img { height: 38px !important; max-width: 130px !important; }
+
+  body {
+    padding-bottom: 64px;
+  }
+
 }
 
 /* ── Mobile Large (480px–767px) ── */
@@ -338,41 +354,69 @@ html, body {
 
   /* Hero: stack vertically, image first */
   .hero {
-    padding: 10px 0 28px;
+    height: calc(100vh - 88px - 60px);
+    padding: 8px 0 20px;
   }
 
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
     padding: 0 20px;
   }
 
   .hero-visual {
     order: 1;
-    padding: 16px 28px 8px;
+    padding: 12px 28px 4px;
   }
 
   .hero-content {
     order: 2;
     text-align: center;
-    padding-right: 0;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .hero-title-green,
+  .hero-title-pink {
+    font-size: clamp(1.9rem, 7vw, 2.8rem);
   }
 
   .hero-content h1 {
-    margin-bottom: 14px;
+    margin-bottom: 0.75rem;
   }
 
-  .hero-content p {
-    margin: 0 auto 20px;
+  .hero-content p,
+  .hero-desc {
+    margin: 0 auto 1.25rem;
+    font-size: clamp(0.88rem, 3.5vw, 0.98rem);
+  }
+
+  .hero-desc-line--2 {
+    justify-content: center;
+  }
+
+  .hero-desc-line--3 {
+    border-right: none;
+    border-top: 2px solid #7BC242;
+    padding-right: 0;
+    padding-top: 0.35rem;
+    margin-top: 0.1rem;
+    display: inline-block;
   }
 
   .hero-buttons {
     justify-content: center;
     gap: 10px;
+    margin-top: 0;
   }
 
   .hero-image-wrapper {
-    max-width: 270px;
+    max-width: 220px;
+    animation: imageReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  }
+
+  .hero-image-wrapper img {
+    max-height: 38vh;
   }
 
   /* Stats bar */
@@ -426,22 +470,18 @@ html, body {
 
   /* Buttons */
   .btn {
-    padding: 13px 22px;
-    font-size: 14px;
+    padding: 10px 18px;
+    font-size: 13px;
     min-height: 44px;
   }
 
   /* Footer */
-  .footer {
-    padding: 28px 0 32px;
-  }
+  .footer { padding: 0.6rem 0 !important; }
+  .footer-logos { gap: 1.5rem !important; }
+  .footer-logos img { height: 32px !important; max-width: 110px !important; }
 
-  .footer-logos {
-    gap: 28px;
-  }
-
-  .footer-logos img {
-    height: 40px !important;
+  body {
+    padding-bottom: 60px;
   }
 }
 
@@ -457,13 +497,22 @@ html, body {
   }
 
   /* Hero */
+  .hero {
+    height: calc(100vh - 88px - 55px);
+  }
+
   .hero-container {
     padding: 0 14px;
-    gap: 12px;
+    gap: 8px;
+  }
+
+  .hero-title-green,
+  .hero-title-pink {
+    font-size: clamp(1.7rem, 8vw, 2.3rem);
   }
 
   .hero-content h1 {
-    font-size: clamp(1.55rem, 8vw, 2rem);
+    margin-bottom: 0.5rem;
   }
 
   .hero-year {
@@ -472,11 +521,15 @@ html, body {
   }
 
   .hero-visual {
-    padding: 14px 20px 6px;
+    padding: 10px 20px 4px;
   }
 
   .hero-image-wrapper {
-    max-width: 230px;
+    max-width: 180px;
+  }
+
+  .hero-image-wrapper img {
+    max-height: 32vh;
   }
 
   .hero-buttons {
@@ -520,8 +573,24 @@ html, body {
     padding: 10px 0 16px;
   }
 
-  .footer {
-    padding: 24px 0 32px;
+  .footer { padding: 0.5rem 0 !important; }
+  .footer-logos { gap: 1rem !important; }
+  .footer-logos img { height: 26px !important; max-width: 90px !important; }
+
+  body {
+    padding-bottom: 55px;
+  }
+}
+
+/* ── Very Small Mobile (≤359px) ── */
+@media (max-width: 359px) {
+  .footer-logos {
+    gap: 0.5rem;
+  }
+
+  .footer-logos img {
+    height: 22px;
+    max-width: 75px;
   }
 }
 

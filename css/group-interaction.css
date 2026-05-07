@@ -180,6 +180,18 @@
    Responsive
    ════════════════════════════════════ */
 
+@media (max-width: 1023px) {
+  .gi-obs-card {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .gi-action-card {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+}
+
 @media (max-width: 767px) {
   .gi-section { padding-bottom: 40px; }
 

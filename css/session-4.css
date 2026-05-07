@@ -166,6 +166,10 @@
 }
 
 /* ── Responsive ── */
+@media (max-width: 1023px) {
+  .s4-secret-key { padding: 20px 24px; }
+}
+
 @media (max-width: 767px) {
   .s4-secret-key { padding: 18px 22px; }
 }

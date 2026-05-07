@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>اللقاءات — دليل الميسرين للعمل مع الأطفال</title>
+  <title>رسالة للأطفال — دليل الميسرين للعمل مع الأطفال</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,15 +13,15 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/pages.css" />
-  <link rel="stylesheet" href="css/sessions.css" />
+  <link rel="stylesheet" href="css/conclusion.css" />
 </head>
 <body>
-  <a href="#sess-main" class="skip-to-content">الانتقال للمحتوى الرئيسي</a>
+  <a href="#cm-main" class="skip-to-content">الانتقال للمحتوى الرئيسي</a>
 
   <!-- ── Navbar ── -->
   <header class="navbar">
     <div class="navbar-container">
-      <a href="index.html#/" class="navbar-logo" aria-label="الصفحة الرئيسية - مدرسة البلد" data-route-link="home">
+      <a href="index.html#/" class="navbar-logo" aria-label="الصفحة الرئيسية - مدرسة البلد">
         <img src="images/logo.png" alt="شعار مدرسة البلد" />
       </a>
       <nav class="navbar-menu">
@@ -32,8 +32,9 @@
           <li><a href="group-management.html">إدارة المجموعة</a></li>
           <li><a href="emotions.html">المشاعر</a></li>
           <li><a href="pfa.html">نهج PFA</a></li>
-          <li><a href="sessions.html" class="active">اللقاءات</a></li>
-          <li><a href="index.html#/conclusion">الخاتمة</a></li>
+          <li><a href="sessions.html">اللقاءات</a></li>
+          <li><a href="children-message.html" class="active">رسالة للأطفال</a></li>
+          <li><a href="index.html#/#conclusion-home">الخاتمة</a></li>
         </ul>
       </nav>
       <div class="navbar-actions">
@@ -52,67 +53,100 @@
   </header>
 
   <!-- ── Main ── -->
-  <main id="sess-main">
+  <main id="cm-main" class="concl-main">
+
+    <!-- Floating magical decorations -->
+    <div class="concl-floats" aria-hidden="true">
+      <span class="cf cf--1">🌟</span>
+      <span class="cf cf--2">💜</span>
+      <span class="cf cf--3">💗</span>
+      <span class="cf cf--4">🌿</span>
+      <span class="cf cf--5">⭐</span>
+      <span class="cf cf--6">💙</span>
+      <span class="cf cf--7">✨</span>
+      <span class="cf cf--8">🌸</span>
+      <span class="cf cf--9">💚</span>
+      <span class="cf cf--10">🌈</span>
+    </div>
+
     <div class="container">
 
-      <!-- ── Page Hero ── -->
+      <!-- ── Page Title ── -->
       <section class="pg-hero">
-        <h1 class="pg-title sess-page-title">خطة عمل اللقاءات الستة</h1>
+        <h1 class="pg-title">رسالة للأطفال</h1>
       </section>
 
-      <!-- ── Sessions Grid ── -->
-      <section class="sess-section" aria-label="اللقاءات الستة">
-        <div class="sess-grid">
+      <!-- ── Side-by-side: cards + illustration ── -->
+      <section class="concl-side-by-side" aria-label="مفاتيح الأطفال الأربعة">
 
-          <!-- Session 1 — Pink -->
-          <a href="#/sessions/1" class="sess-card sess-card--pink">
-            <div class="sess-card-top">
-              <span class="sess-wm" aria-hidden="true">1</span>
-              <h2 class="sess-card-title">اللقاء الأول</h2>
-            </div>
-          </a>
+        <div class="concl-keys-col" role="list">
 
-          <!-- Session 2 — Green -->
-          <a href="#/sessions/2" class="sess-card sess-card--green">
-            <div class="sess-card-top">
-              <span class="sess-wm" aria-hidden="true">2</span>
-              <h2 class="sess-card-title">اللقاء الثاني</h2>
+          <div class="concl-card concl-card--1" role="listitem">
+            <div class="concl-card-badge" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="14" cy="4" r="2.5" fill="white"/>
+                <path d="M14 6.5 L11 12 L7 17" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11 12 L17 16" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 9 L5 7" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M12 9 L18 7.5" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
             </div>
-          </a>
+            <div class="concl-card-content">
+              <h3 class="concl-card-title">جسمي يتكلم</h3>
+              <p class="concl-card-body">إذا شعرت بضيق، تحرك! اقفز ارقص قم بحركات .. الخ لتفرغ الطاقة.</p>
+            </div>
+          </div>
 
-          <!-- Session 3 — Coral -->
-          <a href="#/sessions/3" class="sess-card sess-card--coral">
-            <div class="sess-card-top">
-              <span class="sess-wm" aria-hidden="true">3</span>
-              <h2 class="sess-card-title">اللقاء الثالث</h2>
+          <div class="concl-card concl-card--2" role="listitem">
+            <div class="concl-card-badge" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M9.59 4.59A2 2 0 1 1 11 8H2" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M10.59 15.41A2 2 0 1 0 12 12H2" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M16.27 3.73A2.5 2.5 0 1 1 18.5 8H2" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
             </div>
-          </a>
+            <div class="concl-card-content">
+              <h3 class="concl-card-title">نَفَسي صديقي</h3>
+              <p class="concl-card-body">خذ نفسا عميقا كأنك تشم وردة، وأخرجه كأنك تطفئ شمعة.</p>
+            </div>
+          </div>
 
-          <!-- Session 4 — Teal -->
-          <a href="#/sessions/4" class="sess-card sess-card--teal">
-            <div class="sess-card-top">
-              <span class="sess-wm" aria-hidden="true">4</span>
-              <h2 class="sess-card-title">اللقاء الرابع</h2>
+          <div class="concl-card concl-card--3" role="listitem">
+            <div class="concl-card-badge" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z" fill="white" opacity="0.95"/>
+              </svg>
             </div>
-          </a>
+            <div class="concl-card-content">
+              <h3 class="concl-card-title">خيالي آماني</h3>
+              <p class="concl-card-body">أغمض عينيك وتخيل مكانا تحبه لتغير مزاجك او ابني قصة.</p>
+            </div>
+          </div>
 
-          <!-- Session 5 — Purple -->
-          <a href="#/sessions/5" class="sess-card sess-card--purple">
-            <div class="sess-card-top">
-              <span class="sess-wm" aria-hidden="true">5</span>
-              <h2 class="sess-card-title">اللقاء الخامس</h2>
+          <div class="concl-card concl-card--4" role="listitem">
+            <div class="concl-card-badge" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="9" cy="7" r="4" stroke="white" stroke-width="2.2"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
             </div>
-          </a>
-
-          <!-- Session 6 — Gold -->
-          <a href="#/sessions/6" class="sess-card sess-card--gold">
-            <div class="sess-card-top">
-              <span class="sess-wm" aria-hidden="true">6</span>
-              <h2 class="sess-card-title">اللقاء السادس</h2>
+            <div class="concl-card-content">
+              <h3 class="concl-card-title">أصدقائي و أهلي بهجتي و سندي</h3>
+              <p class="concl-card-body">تواصل مع أصدقائك و أهلك لتحصل على المساعدة و تفرح قلبك</p>
             </div>
-          </a>
+          </div>
 
         </div>
+
+        <div class="concl-illustration-wrap">
+          <img
+            src="images/conclusion-illustration.png"
+            alt="رسالة للأطفال: أربعة مفاتيح سحرية — جسمي يتكلم، نَفَسي صديقي، خيالي آماني، أصدقائي و أهلي بهجتي و سندي"
+          />
+        </div>
+
       </section>
 
     </div>
@@ -148,8 +182,9 @@
         <li><a href="group-management.html">إدارة المجموعة</a></li>
         <li><a href="emotions.html">المشاعر</a></li>
         <li><a href="pfa.html">نهج PFA</a></li>
-        <li><a href="sessions.html" class="active">اللقاءات</a></li>
-        <li><a href="index.html#/conclusion">الخاتمة</a></li>
+        <li><a href="sessions.html">اللقاءات</a></li>
+        <li><a href="children-message.html" class="active">رسالة للأطفال</a></li>
+        <li><a href="index.html#/#conclusion-home">الخاتمة</a></li>
       </ul>
     </nav>
   </div>
@@ -203,21 +238,20 @@
       });
     })();
 
-    /* ── Scroll reveal ── */
+    /* ── Scroll reveal for cards ── */
     (function () {
       var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      if ('IntersectionObserver' in window) {
-        document.querySelectorAll('.sess-card').forEach(function (card, i) {
+      document.querySelectorAll('.concl-card').forEach(function (el, i) {
+        if ('IntersectionObserver' in window) {
           new IntersectionObserver(function (entries, obs) {
             if (!entries[0].isIntersecting) return;
             obs.disconnect();
-            setTimeout(function () { card.classList.add('sess-vis'); }, reduced ? 0 : i * 80);
-          }, { threshold: 0.08 }).observe(card);
-        });
-      } else {
-        document.querySelectorAll('.sess-card').forEach(function (c) { c.classList.add('sess-vis'); });
-      }
+            setTimeout(function () { el.classList.add('concl-vis'); }, reduced ? 0 : i * 100);
+          }, { threshold: 0.06 }).observe(el);
+        } else {
+          el.classList.add('concl-vis');
+        }
+      });
     })();
   </script>
 </body>

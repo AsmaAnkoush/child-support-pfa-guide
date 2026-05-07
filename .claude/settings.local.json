@@ -19,7 +19,10 @@
       "Bash(grep -rn \"\\\\\\(6-8\\\\|9-12\\\\|11-15\\\\|13-15\\\\|12-15\\\\\\)\" \"D:\\\\\\\\Facilitators\" --include=\"*.html\")",
       "Bash(grep -rn \"[0-9]\\\\+-[0-9]\\\\+\" \"D:\\\\\\\\Facilitators\" --include=\"*.html\")",
       "Bash(Get-ChildItem -Path \"D:\\\\Facilitators\" -Force)",
-      "Bash(Select-Object Name, PSIsContainer)"
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(Get-ChildItem \"D:\\\\Facilitators\\\\css\" -Filter \"*.css\")",
+      "Bash(Select-Object Name, Length)",
+      "Bash(Sort-Object Name)"
     ]
   }
 }
