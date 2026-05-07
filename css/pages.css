@@ -167,8 +167,69 @@
   background-clip: unset !important;
   font-size: clamp(1.75rem, 3.5vw, 2.5rem) !important;
   font-weight: 800 !important;
-  margin: 0.5rem auto 2rem auto !important;
+  margin: 0.5rem auto 1rem auto !important;
   padding-top: 0 !important;
+  padding-bottom: 0 !important;
   display: block !important;
   width: 100% !important;
+}
+
+/* ── Icon + text: stay inline on desktop, wrap allowed on mobile ── */
+.ptl-card-hdr,
+.pfa-card-hdr,
+.gp-card-hdr,
+.s1-info-label,
+.s1-section-label,
+.s1-act-hdr,
+.s4-key-hdr-left,
+.gi-obs-card {
+  flex-wrap: nowrap;
+}
+
+.ptl-icon,
+.pfa-icon,
+.gp-icon,
+.s4-key-icon,
+.gi-obs-icon,
+.s1-info-label svg,
+.s1-section-label svg {
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
+@media (max-width: 767px) {
+  .ptl-card-hdr,
+  .pfa-card-hdr,
+  .gp-card-hdr {
+    flex-wrap: wrap;
+  }
+}
+
+/* ── SPA container top padding ── */
+#page-view {
+  padding-top: 1rem !important;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1023px) {
+  .pg-title,
+  .page-title,
+  [class*="pg-title"],
+  [class*="page-title"] {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  #page-view { padding-top: 0.75rem !important; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .pg-title,
+  .page-title,
+  [class*="pg-title"],
+  [class*="page-title"] {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  #page-view { padding-top: 0.5rem !important; }
 }
